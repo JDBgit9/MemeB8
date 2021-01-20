@@ -1,0 +1,93 @@
+import { Grid } from "@material-ui/core";
+import { useState, useEffect } from "react";
+import axios from "axios";
+
+import { makeStyles } from "@material-ui/core/styles";
+
+// Auth0 Hook
+import { useAuth0 } from "@auth0/auth0-react";
+
+// Component
+import Memebate from "../components/Memebate";
+import Profile from "../components/Profile";
+import Post from "../components/Post";
+import AboutUs from "../components/aboutUs/AboutUs";
+import Details from "../components/aboutUs/Details";
+import GetStarted from "../components/aboutUs/GetStarted";
+
+const useStyles = makeStyles((theme) => ({
+  container: {
+    marginTop: "64px",
+  },
+}));
+
+const Home = () => {
+  const classes = useStyles();
+  const { user, isAuthenticated, isLoading } = useAuth0();
+
+  const [data, setData] = useState([]);
+  const [query, setQuery] = useState("react");
+  const [loading, setLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
+
+  useEffect(() => {
+    let ignore = false;
+
+    async function fetchData() {
+      setLoading(true);
+      setIsError(false);
+      try {
+        const resp = await axios.get("/media");
+        if (!ignore) setData(resp.data);
+      } catch (error) {
+        console.error(error);
+        setIsError(true);
+      }
+      setLoading(false);
+    }
+
+    fetchData();
+    return () => {
+      ignore = true;
+    };
+  }, [query]);
+
+  if (isLoading) {
+    return <>Loading ...</>;
+  }
+
+  if (isAuthenticated) {
+    return (
+      <Grid container className={classes.container} spacing={6}>
+        <Grid item sm={8} xs={12}>
+          {isError && <>Something went wrong ...</>}
+
+          {isLoading ? (
+            <>Loading ...</>
+          ) : (
+            <>
+              {data.length > 0 &&
+                data.map((memebate, index) => (
+                  <Memebate key={index} memebate={memebate} />
+                ))}
+            </>
+          )}
+        </Grid>
+        <Grid item sm={4} xs={12}>
+          <Profile />
+          <Post />
+        </Grid>
+      </Grid>
+    );
+  } else {
+    return (
+      <>
+        <AboutUs />
+        <Details />
+        <GetStarted />
+      </>
+    );
+  }
+};
+
+export default Home;
