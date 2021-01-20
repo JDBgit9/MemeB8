@@ -1,0 +1,4 @@
+{
+    "MONGO_URI": "mongodb+srv://110120MongoDBatlas_:110120MongoDBatlas_@workout-tracker.bkgq3.mongodb.net/Memebate?retryWrites=true&w=majority",
+    "PORT": "3000"
+}
