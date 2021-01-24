@@ -88,7 +88,7 @@ const GetStarted = () => {
                     component="h1"
                     className={classes.cardTitle}
                   >
-                    Memebater
+                    MemeBater
                   </Typography>
                   <Typography
                     variant="body2"
