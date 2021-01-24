@@ -47,7 +47,7 @@ class Memebate extends Component {
                         <iframe
                             width="385"
                             height="315"
-                            src={`https://www.youtube.com/embed/${debate.split("=").pop() }`}
+                            src={`${debate}`}
                             frameBorder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen

@@ -96,11 +96,11 @@ const GetStarted = () => {
                     component="p"
                     className={classes.desc}
                   >
-                    As a memebater you get to engage in the debates by posting
-                    likes, dislikes, memes, gifs, and emojis in the comment
-                    section. Memebaters are most important because they are the
+                    As a memebater you engage in the debates by posting memes,
+                    likes, dislikes, gifs, and emojis in the memebate
+                    section. Memebaters are the most important because you are the
                     judges of each of the debates on this platform. So be nice
-                    you never kow you'll meet. You must sign up to become a
+                    you never know who you'll meet. You must sign up to become a
                     memebater.
                   </Typography>
                 </CardContent>
