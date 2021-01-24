@@ -152,6 +152,11 @@ const GetStarted = () => {
                     component="p"
                     className={classes.desc}
                   >
+  If you want to join an open discussion simply add a media
+                    video or audio (anonymous or non-anonymous) link with oral
+                    response to the conversation or just send memes. That's
+                    always fun.
+
                     We hope that this will be a step in a direction of bringing
                     humanity together through harmony, understanding, and honest
                     communication.
@@ -178,10 +183,10 @@ const GetStarted = () => {
                     component="p"
                     className={classes.desc}
                   >
-                    If you want to join an open discussion simply add a media
-                    video or audio (anonymous or non-anonymous) link with oral
-                    response to the conversation or just send memes. That's
-                    always fun.
+                    The MemeBate team hopes that this platform will be a step in a direction of bringing
+                    humanity together through harmony, understanding, and honest
+                    communication online.
+                    
                   </Typography>
                 </CardContent>
               </Card>
