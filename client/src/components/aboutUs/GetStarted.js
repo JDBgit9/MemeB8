@@ -125,10 +125,10 @@ const GetStarted = () => {
                     component="p"
                     className={classes.desc}
                   >
-                    Debaters simply create an account and then record an audio
-                    or video media link (anonymous, or non-anonymous) to their
-                    profile page of their favorite topic and then watch the fun
-                    memebating begin to unfold.
+                    Debaters to state you case simply create an account and then record an audio
+                    or video media link of your favorite topic (anonymous, or non-anonymous) to your
+                    profile page then watch the fun
+                    memebating begin. 
                   </Typography>
                 </CardContent>
               </Card>
