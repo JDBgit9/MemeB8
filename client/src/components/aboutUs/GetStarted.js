@@ -100,7 +100,7 @@ const GetStarted = () => {
                     likes, dislikes, gifs, and emojis in the comment
                     section. Memebaters are most important because you are the
                     judges of each of the debates on this platform. So be nice
-                    you never know you'll meet. You must sign up to become a
+                    you never know who you'll meet. You must sign up to become a
                     MemeBater.
                   </Typography>
                 </CardContent>
@@ -154,7 +154,7 @@ const GetStarted = () => {
                   >
   If you want to join an open discussion simply add a media
                     video or audio (anonymous or non-anonymous) link with oral
-                    response to the conversation or just send memes. That's
+                    response to the conversation or just send memes, that's
                     always fun.
 
                     We hope that this will be a step in a direction of bringing
@@ -186,7 +186,7 @@ const GetStarted = () => {
                     The MemeBate team hopes that this platform will be a step in a direction of bringing
                     humanity together through harmony, understanding, and honest
                     communication online.
-                    
+
                   </Typography>
                 </CardContent>
               </Card>
