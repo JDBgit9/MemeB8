@@ -14,7 +14,9 @@ const mediaSchema = new Schema({
   points: { type: Number, required: true, default: 100 },
   memebaters: { type: Number, required: true, default: 0 },
   wins: { type: Number, required: true, default: 0 },
-  losses: { type: Number, required: true, default: 0 }
+  losses: { type: Number, required: true, default: 0 },
+  likes: {type: Number, required: false, default: 0},
+  dislikes: {type: Number, required: false, default: 0}
 });
 
 const Media = mongoose.model("media", mediaSchema);
