@@ -93,6 +93,7 @@ const Post = () => {
         <option value="Coding">Coding</option>
         <option value="Cosmetics">Cosmetics</option>
         <option value="Culture">Culture</option>
+        <option value="CryptoCurrency">CryptoCurrency</option>
         <option value="Education">Education</option>
         <option value="Fashion">Fashion</option>
         <option value="Financial">Financial</option>
