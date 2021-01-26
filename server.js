@@ -45,7 +45,7 @@ app.post("/media", async (request, response) => {
   });
 });
 app.post("/media/likes/add", async(request, response)=> {
-  Media.update({_id:resquest.body.id}, {$set:{"likes":request.body.likes}})
+  Media.update({_id:resquest.body.id}, {$set:{"likes":request.body.likes}}).then(resp=>response.status(200).send(request.body))
 })
 app.post("login")
 

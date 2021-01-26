@@ -10,6 +10,8 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
+import axios from 'axios';
+
 
 const styles =  {
     card: {
@@ -22,8 +24,11 @@ const styles =  {
 }
 
 class Memebate extends Component {
-    handleLike(id) {
+    handleLike(id, likes) {
         console.log(id)
+        // try{
+        //     axios.post("/media/likes/add", {id:id,like:likes+1}).then(response=>console.log(response))
+        // } catch(error){console.log(error)}
     }
     render(){ 
         const { classes, 
@@ -79,8 +84,8 @@ class Memebate extends Component {
                         </iframe>
                     </div>
                     <div className="memebate_reactions">
-                    <ThumbUpIcon onClick={()=>this.handleLike(_id)}/>
-                    <ThumbDownAltIcon/> 
+                    <ThumbUpIcon onClick={()=>this.handleLike(_id, likes)}/>{likes}
+                    <ThumbDownAltIcon/>{dislikes} 
                     </div>
 
                     <Typography variant="body1" color="textSecondary">{synopsis}</Typography>
