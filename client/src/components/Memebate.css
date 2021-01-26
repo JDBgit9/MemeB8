@@ -8,7 +8,17 @@
     padding: 0.5em 1em;
     text-align: center;
     background-color: #999999;
-    color: #333333;
-    margin-right: 10px;
+    color: #ffffff;
+    margin-left: 10px;
     border-radius: 5px;
+    font-size: 12px;
+}
+.memebate_title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 385px;
+}
+.memebate_title .MuiTypography-root {
+    max-width: 200px;
 }

@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import "./Memebate.css"
+import ThumbUpIcon from '@material-ui/icons/ThumbUp';
+import ThumbDownAltIcon from '@material-ui/icons/ThumbDownAlt';
 
 // MUI Stuff
 import { withStyles } from '@material-ui/core/styles'
@@ -43,8 +45,19 @@ class Memebate extends Component {
                     color="primary"> 
                     Username Placeholder
                     </Typography>
-                    <Typography variant="h6">{title}</Typography>
+                    <div className="memebate_title">
+                        <Typography variant="h6">{title}</Typography>
+                    <div className="memebate_details">
+                            <div className="detail">
+                                {category}
+                            </div>
+                            <div className="detail">
+                                {format}
+                            </div>
+                        </div> 
+                        </div>
                     <div>
+                       
                         <iframe
                             width="385"
                             height="315"
@@ -54,14 +67,6 @@ class Memebate extends Component {
                             allowFullScreen
                         >
                         </iframe>
-                        <div className="memebate_details">
-                            <div className="detail">
-                                {category}
-                            </div>
-                            <div className="detail">
-                                {format}
-                            </div>
-                        </div>
                     </div>
                     <Typography variant="body1" color="textSecondary">{synopsis}</Typography>
                     {
