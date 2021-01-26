@@ -56,14 +56,14 @@ class Memebate extends Component {
                     </div>
                     <Typography variant="body1" color="textSecondary">{synopsis}</Typography>
                     {
-                        source1?.length>0&&(<Typography variant="body1" color="textSecondary">{source1}</Typography>)
+                        source1?.length>0&&(<Typography variant="body1" color="textSecondary"><a href={source1} target="_blank">{source1}</a></Typography>)
                     }
 
                        {
-                        source2?.length>0&&(<Typography variant="body1" color="textSecondary">{source2}</Typography>)
+                        source2?.length>0&&(<Typography variant="body1" color="textSecondary"><a href={source2} target="_blank">{source2}</a></Typography>)
                     }
                         {
-                            source3?.length>0&&(<Typography variant="body1" color="textSecondary">{source3}</Typography>)
+                            source3?.length>0&&(<Typography variant="body1" color="textSecondary"><a href={source3} target="_blank">{source3}</a></Typography>)
                         }
                 
                 </CardContent>
