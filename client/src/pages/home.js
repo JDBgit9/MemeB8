@@ -45,7 +45,7 @@ const Home = () => {
       }
       setLoading(false);
     }
-
+console.log(data)
     fetchData();
     return () => {
       ignore = true;
