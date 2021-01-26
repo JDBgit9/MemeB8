@@ -96,8 +96,8 @@ const GetStarted = () => {
                     component="p"
                     className={classes.desc}
                   >
-                    As a MemeBater you get to engage in the debates by posting memes,
-                    likes, dislikes, gifs, and emojis in the comment
+                    As a MemeBater you get to engage in the debates by posting
+                    memes, likes, dislikes, gifs, and emojis in the comment
                     section. Memebaters are most important because you are the
                     judges of each of the debates on this platform. So be nice
                     you never know who you'll meet. You must sign up to become a
@@ -125,10 +125,10 @@ const GetStarted = () => {
                     component="p"
                     className={classes.desc}
                   >
-                    Debaters to state you case simply create an account and then record an audio
-                    or video media link of your favorite topic (anonymous, or non-anonymous) to your
-                    profile page then watch the fun
-                    memebating begin. 
+                    Debaters to state you case simply create an account and then
+                    record an audio or video media link of your favorite topic
+                    (anonymous, or non-anonymous) to your profile page then
+                    watch the fun memebating begin.
                   </Typography>
                 </CardContent>
               </Card>
@@ -152,14 +152,12 @@ const GetStarted = () => {
                     component="p"
                     className={classes.desc}
                   >
-  If you want to join an open discussion simply add a media
+                    If you want to join an open discussion simply add a media
                     video or audio (anonymous or non-anonymous) link with oral
                     response to the conversation or just send memes, that's
-                    always fun.
-
-                    We hope that this will be a step in a direction of bringing
-                    humanity together through harmony, understanding, and honest
-                    communication.
+                    always fun. We hope that this will be a step in a direction
+                    of bringing humanity together through harmony,
+                    understanding, and honest communication.
                   </Typography>
                 </CardContent>
               </Card>
@@ -183,10 +181,9 @@ const GetStarted = () => {
                     component="p"
                     className={classes.desc}
                   >
-                    The MemeBate team hopes that this platform will be a step in a direction of bringing
-                    humanity together through harmony, understanding, and honest
-                    communication online.
-
+                    The MemeBate team hopes that this platform will be a step in
+                    a direction of bringing humanity together through harmony,
+                    understanding, and honest communication online.
                   </Typography>
                 </CardContent>
               </Card>

@@ -8,7 +8,6 @@ const Memebater = require("./models/memebater");
 
 const app = express();
 
-// Connect Database
 connectDB()
 
 app.use(cors({ origin: true }));
