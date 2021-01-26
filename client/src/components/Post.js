@@ -91,24 +91,27 @@ const Post = () => {
         </option>
         <option value="Anime">Anime</option>
         <option value="Coding">Coding</option>
+        <option value="Cosmetics">Cosmetics</option>
         <option value="Culture">Culture</option>
         <option value="Education">Education</option>
         <option value="Fashion">Fashion</option>
         <option value="Financial">Financial</option>
         <option value="Gaming">Gaming</option>
+        <option value="Health">Health</option>
         <option value="History">History</option>
         <option value="Kamakazi">Kamakazi</option>
         <option value="Medicine">Medicine</option>
         <option value="Music">Music</option>
         <option value="News">News</option>
-        <option value="Opinion">Opinion</option>
+        <option value="Opinion">Opinion</option>  
+        <option value="Physics">Physics</option>
         <option value="Politics">Politics</option>
         <option value="Random">Random</option>
         <option value="Religion">Religion</option>
         <option value="Science">Science</option>
         <option value="Speed">Speed</option>
         <option value="Sports">Sports</option>
-        <option value="Tecnology">Technology</option>
+        <option value="Technology">Technology</option>
         <option value="Questions">Questions</option>
       </select>
       <select
