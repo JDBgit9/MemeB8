@@ -53,6 +53,14 @@ class Memebate extends Component {
                             allowFullScreen
                         >
                         </iframe>
+                        <div className="memebate_details">
+                            <div className="detail">
+                                {category}
+                            </div>
+                            <div className="detail">
+                                {format}
+                            </div>
+                        </div>
                     </div>
                     <Typography variant="body1" color="textSecondary">{synopsis}</Typography>
                     {
