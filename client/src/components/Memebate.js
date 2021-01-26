@@ -27,7 +27,9 @@ class Memebate extends Component {
                 synopsis,  
                 category,  
                 format, 
-                source1 
+                source1,
+                source2,
+                source3 
             } 
         } = this.props;
         
@@ -53,6 +55,17 @@ class Memebate extends Component {
                         </iframe>
                     </div>
                     <Typography variant="body1" color="textSecondary">{synopsis}</Typography>
+                    {
+                        source1?.length>0&&(<Typography variant="body1" color="textSecondary">{source1}</Typography>)
+                    }
+
+                       {
+                        source2?.length>0&&(<Typography variant="body1" color="textSecondary">{source2}</Typography>)
+                    }
+                        {
+                            source3?.length>0&&(<Typography variant="body1" color="textSecondary">{source3}</Typography>)
+                        }
+                
                 </CardContent>
             </Card>
         );
