@@ -1,0 +1,14 @@
+.memebate_details {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    box-sizing: border-box;
+}
+.memebate_details .detail {
+    padding: 0.5em 1em;
+    text-align: center;
+    background-color: #999999;
+    color: #333333;
+    margin-right: 10px;
+    border-radius: 5px;
+}
