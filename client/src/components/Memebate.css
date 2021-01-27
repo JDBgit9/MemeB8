@@ -30,7 +30,10 @@
     align-items: center;
     width: 385px;
     font-size: 10px;
-    border-radius: 5px;
-
+    border-radius: 5px; 
     
+}
+.memebate_sources {
+    font-size: 5px;
+    width: 385px;
 }

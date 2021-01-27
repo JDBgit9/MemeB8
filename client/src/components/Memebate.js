@@ -90,6 +90,7 @@ class Memebate extends Component {
                     <div className="memebate_synopsis">
                     <Typography variant="body1" color="textSecondary">{synopsis}</Typography>
                     </div>
+                    <div className="memebate_sources">
                     {
                         source1?.length>0&&(<Typography variant="body1" color="textSecondary"><a href={source1} target="_blank">{source1}</a></Typography>)
                     }
@@ -100,7 +101,7 @@ class Memebate extends Component {
                         {
                             source3?.length>0&&(<Typography variant="body1" color="textSecondary"><a href={source3} target="_blank">{source3}</a></Typography>)
                         }
-                
+                </div>
                 </CardContent>
             </Card>
         );
