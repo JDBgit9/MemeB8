@@ -87,8 +87,9 @@ class Memebate extends Component {
                     <ThumbUpIcon onClick={()=>this.handleLike(_id, likes)}/>{likes}
                     <ThumbDownAltIcon/>{dislikes} 
                     </div>
-
+                    <div className="memebate_synopsis">
                     <Typography variant="body1" color="textSecondary">{synopsis}</Typography>
+                    </div>
                     {
                         source1?.length>0&&(<Typography variant="body1" color="textSecondary"><a href={source1} target="_blank">{source1}</a></Typography>)
                     }

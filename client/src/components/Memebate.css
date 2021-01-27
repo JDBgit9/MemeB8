@@ -22,3 +22,10 @@
 .memebate_title .MuiTypography-root {
     max-width: 200px;
 }
+.memebate_synosis {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 1em;
+    text-align: center;
+    max-width: 385px;
+}
