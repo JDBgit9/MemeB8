@@ -26,9 +26,9 @@ const styles =  {
 class Memebate extends Component {
     handleLike(id, likes) {
         console.log(id)
-        // try{
-        //     axios.post("/media/likes/add", {id:id,like:likes+1}).then(response=>console.log(response))
-        // } catch(error){console.log(error)}
+        try{
+            axios.post("/media/likes/add", {id:id,like:likes+1}).then(response=>console.log(response))
+        } catch(error){console.log(error)}
     }
     render(){ 
         const { classes, 

@@ -93,8 +93,8 @@ const Profile = () => {
               @{user.nickname}
             </MuiLink>
             <hr />
-            {bio && <Typography variant="body2">{bio}</Typography>}
-            <hr />
+            {/* {bio && <Typography variant="body2">{bio}</Typography>}
+            <hr /> */}
             {/* {location            >
                   <LocationOn color="primary" /> <span>{location}</span>
                   <hr           >
