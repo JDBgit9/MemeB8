@@ -88,7 +88,7 @@ const GetStarted = () => {
                     component="h1"
                     className={classes.cardTitle}
                   >
-                    Memebater
+                    MemeBater
                   </Typography>
                   <Typography
                     variant="body2"
@@ -96,12 +96,12 @@ const GetStarted = () => {
                     component="p"
                     className={classes.desc}
                   >
-                    As a memebater you engage in the debates by posting memes,
-                    likes, dislikes, gifs, and emojis in the memebate
-                    section. Memebaters are the most important because you are the
+                    As a MemeBater you get to engage in the debates by posting
+                    memes, likes, dislikes, gifs, and emojis in the comment
+                    section. Memebaters are most important because you are the
                     judges of each of the debates on this platform. So be nice
                     you never know who you'll meet. You must sign up to become a
-                    memebater.
+                    MemeBater.
                   </Typography>
                 </CardContent>
               </Card>
@@ -125,10 +125,10 @@ const GetStarted = () => {
                     component="p"
                     className={classes.desc}
                   >
-                    Debaters simply create an account and then record an audio
-                    or video media link (anonymous, or non-anonymous) to their
-                    profile page of their favorite topic and then watch the fun
-                    memebating begin to unfold.
+                    Debaters to state you case simply create an account and then
+                    record an audio or video media link of your favorite topic
+                    (anonymous, or non-anonymous) to your profile page then
+                    watch the fun memebating begin.
                   </Typography>
                 </CardContent>
               </Card>
@@ -152,9 +152,12 @@ const GetStarted = () => {
                     component="p"
                     className={classes.desc}
                   >
-                    We hope that this will be a step in a direction of bringing
-                    humanity together through harmony, understanding, and honest
-                    communication.
+                    If you want to join an open discussion simply add a media
+                    video or audio (anonymous or non-anonymous) link with oral
+                    response to the conversation or just send memes, that's
+                    always fun. We hope that this will be a step in a direction
+                    of bringing humanity together through harmony,
+                    understanding, and honest communication.
                   </Typography>
                 </CardContent>
               </Card>
@@ -178,10 +181,9 @@ const GetStarted = () => {
                     component="p"
                     className={classes.desc}
                   >
-                    If you want to join an open discussion simply add a media
-                    video or audio (anonymous or non-anonymous) link with oral
-                    response to the conversation or just send memes. That's
-                    always fun.
+                    The MemeBate team hopes that this platform will be a step in
+                    a direction of bringing humanity together through harmony,
+                    understanding, and honest communication online.
                   </Typography>
                 </CardContent>
               </Card>

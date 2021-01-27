@@ -1,0 +1,24 @@
+.memebate_details {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    box-sizing: border-box;
+}
+.memebate_details .detail {
+    padding: 0.5em 1em;
+    text-align: center;
+    background-color: #999999;
+    color: #ffffff;
+    margin-left: 10px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+.memebate_title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 385px;
+}
+.memebate_title .MuiTypography-root {
+    max-width: 200px;
+}
