@@ -16,16 +16,21 @@
 .memebate_title {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
     width: 385px;
 }
 .memebate_title .MuiTypography-root {
     max-width: 200px;
 }
-.memebate_synosis {
+.memebate_synopsis {
     display: flex;
-    justify-content: space-between;
-    padding: 0.5rem 1em;
-    text-align: center;
-    max-width: 385px;
+    background-color: #ffffff;
+    color: #999999;
+    justify-content: center;
+    align-items: center;
+    width: 385px;
+    font-size: 10px;
+    border-radius: 5px;
+
+    
 }
