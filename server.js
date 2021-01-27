@@ -6,6 +6,7 @@ const config = require('config');
 const Media = require("./models/media");
 const Memebater = require("./models/memebater");
 const { response } = require("express");
+const ObjectId =require("mongodb").ObjectId;
 
 const app = express();
 
@@ -45,7 +46,7 @@ app.post("/media", async (request, response) => {
   });
 });
 app.post("/media/likes/add", async(request, response)=> {
-  Media.update({_id:resquest.body.id}, {$set:{"likes":request.body.likes}}).then(resp=>response.status(200).send(request.body))
+  Media.update({_id:ObjectId(request.body.id)}, {$set:{likes: request.body.like}}).then(resp=>response.status(200).send(request.body))
 })
 app.post("login")
 
