@@ -30,6 +30,13 @@ class Media extends Component {
             axios.post("/media/likes/add", {id:id,like:likes+1}).then(response=>console.log(response))
         } catch(error){console.log(error)}
     }
+    class Media extends Component {
+        handleLike(id, dislikes) {
+            console.log(id)
+            try{
+                axios.post("/media/dislikes/add", {id:id,like:dislikes+1}).then(response=>console.log(response))
+            } catch(error){console.log(error)}
+        }
     render(){ 
         const { classes, 
             media: { 
@@ -85,7 +92,7 @@ class Media extends Component {
                     </div>
                     <div className="media_reactions">
                     <ThumbUpIcon onClick={()=>this.handleLike(_id, likes)}/>{likes}
-                    <ThumbDownAltIcon/>{dislikes} 
+                    <ThumbDownAltIcon onClick={()=>this.handleDislike(_id, dislikes)}/>{dislikes} 
                     </div>
                     <div className="media_synopsis">
                     <Typography variant="body1" color="textSecondary">{synopsis}</Typography>
