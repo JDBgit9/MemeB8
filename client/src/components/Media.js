@@ -30,13 +30,13 @@ class Media extends Component {
             axios.post("/media/likes/add", {id:id,like:likes+1}).then(response=>console.log(response))
         } catch(error){console.log(error)}
     }
-    class Media extends Component {
-        handleLike(id, dislikes) {
+        handleDislike(id, dislikes) {
             console.log(id)
             try{
                 axios.post("/media/dislikes/add", {id:id,like:dislikes+1}).then(response=>console.log(response))
             } catch(error){console.log(error)}
         }
+
     render(){ 
         const { classes, 
             media: { 
