@@ -8,7 +8,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { useAuth0 } from "@auth0/auth0-react";
 
 // Component
-import Memebate from "../components/Memebate";
+import Media from "../components/Media";
 import Profile from "../components/Profile";
 import Post from "../components/Post";
 import AboutUs from "../components/aboutUs/AboutUs";
@@ -67,8 +67,8 @@ console.log(data)
           ) : (
             <>
               {data.length > 0 &&
-                data.map((memebate, index) => (
-                  <Memebate key={index} memebate={memebate} />
+                data.map((media, index) => (
+                  <Media key={index} media={media} />
                 ))}
             </>
           )}

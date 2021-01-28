@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import "./Memebate.css"
+import "./Media.css"
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import ThumbDownAltIcon from '@material-ui/icons/ThumbDownAlt';
 
@@ -23,7 +23,7 @@ const styles =  {
     }
 }
 
-class Memebate extends Component {
+class Media extends Component {
     handleLike(id, likes) {
         console.log(id)
         try{
@@ -32,7 +32,7 @@ class Memebate extends Component {
     }
     render(){ 
         const { classes, 
-            memebate: { 
+            media: { 
                 _id,
                 debate, 
                 title,   
@@ -60,9 +60,9 @@ class Memebate extends Component {
                     color="primary"> 
                     Username Placeholder
                     </Typography>
-                    <div className="memebate_title">
+                    <div className="media_title">
                         <Typography variant="h6">{title}</Typography>
-                    <div className="memebate_details">
+                    <div className="media_details">
                             <div className="detail">
                                 {category}
                             </div>
@@ -83,14 +83,14 @@ class Memebate extends Component {
                         >
                         </iframe>
                     </div>
-                    <div className="memebate_reactions">
+                    <div className="media_reactions">
                     <ThumbUpIcon onClick={()=>this.handleLike(_id, likes)}/>{likes}
                     <ThumbDownAltIcon/>{dislikes} 
                     </div>
-                    <div className="memebate_synopsis">
+                    <div className="media_synopsis">
                     <Typography variant="body1" color="textSecondary">{synopsis}</Typography>
                     </div>
-                    <div className="memebate_sources">
+                    <div className="media_sources">
                     {
                         source1?.length>0&&(<Typography variant="body1" color="textSecondary"><a href={source1} target="_blank">{source1}</a></Typography>)
                     }
@@ -108,4 +108,4 @@ class Memebate extends Component {
     }
 }
 
-export default withStyles(styles)(Memebate)
+export default withStyles(styles)(Media)

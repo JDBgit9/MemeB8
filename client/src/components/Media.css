@@ -1,10 +1,10 @@
-.memebate_details {
+.media_details {
     display: flex;
     align-items: center;
     padding: 10px 0;
     box-sizing: border-box;
 }
-.memebate_details .detail {
+.media_details .detail {
     padding: 0.5em 1em;
     text-align: center;
     background-color: #999999;
@@ -13,16 +13,16 @@
     border-radius: 5px;
     font-size: 12px;
 }
-.memebate_title {
+.media_title {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     width: 385px;
 }
-.memebate_title .MuiTypography-root {
+.media_title .MuiTypography-root {
     max-width: 200px;
 }
-.memebate_synopsis {
+.media_synopsis {
     display: flex;
     background-color: #ffffff;
     color: #999999;
@@ -33,7 +33,7 @@
     border-radius: 5px; 
     
 }
-.memebate_sources {
+.media_sources {
     font-size: 5px;
     width: 385px;
 }
