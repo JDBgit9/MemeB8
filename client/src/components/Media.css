@@ -26,14 +26,15 @@
     display: flex;
     background-color: #ffffff;
     color: #140202;
-    justify-content: center;
-    align-items: center;
+    justify-content: left;
+    align-items: left;
     width: 385px;
-    font-size: 10px;
+    font-size: 5px;
     border-radius: 5px; 
     
 }
 .media_sources {
+    padding: 0.5em 1em;
     font-size: 5px;
     width: 385px;
 }
