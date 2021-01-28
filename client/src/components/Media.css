@@ -22,6 +22,9 @@
 .media_title .MuiTypography-root {
     max-width: 200px;
 }
+.media_reactions {
+    color: cornflowerblue;
+}
 .media_synopsis {
     display: flex;
     background-color: #ffffff;
