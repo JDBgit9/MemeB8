@@ -107,11 +107,11 @@ class Media extends Component {
                     </div>
                     </div>
                     <div className="media_synopsis">
-                    <Typography variant="body1" color="textSecondary">{synopsis}</Typography>
+                    <Typography variant="body1" color="textSecondary">{synopsis.length>150?`${synopsis.substring(0,150)}...`:synopsis}</Typography>
                     </div>
                     <div className="media_sources">
                     {
-                        source1?.length>0&&(<Typography variant="body1" color="textSecondary"><a href={source1} target="_blank">{source1}</a></Typography>)
+                        source1?.length>0&&(<Typography variant="body1" color="textSecondary"><a href={source1} target="_blank">Supporting Link</a></Typography>)
                     }
 
                        {
