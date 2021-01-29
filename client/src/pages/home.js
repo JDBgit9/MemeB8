@@ -51,6 +51,15 @@ console.log(data)
       ignore = true;
     };
   }, [query]);
+  useEffect(()=>{},[data])
+  const updateReaction = (object, index)=>{
+    setLoading(true)
+    let tempData=data;
+    tempData[index]=object;
+    console.log(tempData)
+    setData(tempData)
+    setLoading(false)
+  }
 
   if (isLoading) {
     return <>Loading ...</>;
@@ -66,9 +75,9 @@ console.log(data)
             <>Loading ...</>
           ) : (
             <>
-              {data.length > 0 &&
-                data.map((media, index) => (
-                  <Media key={index} media={media} />
+              {data?.length > 0 &&
+                data?.map((media, index) => (
+                  <Media key={index} media={media} index={index} updateReaction={updateReaction} />
                 ))}
             </>
           )}

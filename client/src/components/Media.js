@@ -26,7 +26,11 @@ class Media extends Component {
     handleLike(id, likes) {
         console.log(id)
         try{
-            axios.post("/media/likes/add", {id:id,like:likes+1}).then(response=>console.log(response))
+            axios.post("/media/likes/add", {id:id,like:likes+1}).then(response=>{
+                let object=this.props.media;
+                object.likes++
+                this.props.updateReaction(object, this.props.index)    
+            })
         } catch(error){console.log(error)}
     }
         handleDislike(id, dislikes) {
@@ -53,8 +57,10 @@ class Media extends Component {
                 points,
                 wins,
                 losses 
-            } 
+            },
+            index, updateReaction
         } = this.props;
+      
         
         
         return(
