@@ -22,8 +22,35 @@
 .media_title .MuiTypography-root {
     max-width: 200px;
 }
-.media_reactions {
+.reactions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+}
+.reaction {
     color: cornflowerblue;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    
+}
+.reaction_count {
+    margin-left: 5px;
+    color: #333333;
+}
+.reaction:hover {
+    color: green;
+}
+.reaction {
+    color: cornflowerblue;
+    position: relative;
+    margin-top: auto;
+    align-items: center;
+}
+.reaction:hover {
+color: green;
 }
 .media_synopsis {
     display: flex;

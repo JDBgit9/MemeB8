@@ -89,9 +89,12 @@ class Media extends Component {
                         >
                         </iframe>
                     </div>
-                    <div className="media_reactions">
-                    <ThumbUpIcon onClick={()=>this.handleLike(_id, likes)}/>{likes}
-                    <ThumbDownAltIcon onClick={()=>this.handleDislike(_id, dislikes)}/>{dislikes} 
+                    <div className="reactions">
+                    <div className="reaction">
+                    <ThumbUpIcon onClick={()=>this.handleLike(_id, likes)}/><span className="reaction_count">{likes}</span></div>
+                    <div className="reaction">
+                    <ThumbDownAltIcon onClick={()=>this.handleDislike(_id, dislikes)}/><span className="reaction_count">{dislikes}</span> 
+                    </div>
                     </div>
                     <div className="media_synopsis">
                     <Typography variant="body1" color="textSecondary">{synopsis}</Typography>
