@@ -51,7 +51,6 @@ console.log(data)
       ignore = true;
     };
   }, [query]);
-  useEffect(()=>{},[data])
   const updateReaction = (object, index)=>{
     setLoading(true)
     let tempData=data;
