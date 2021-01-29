@@ -76,7 +76,7 @@ console.log(data)
             <>
               {data?.length > 0 &&
                 data?.map((media, index) => (
-                  <Media key={index} media={media} index={index} updateReaction={updateReaction} />
+                  <Media key={index} media={media} index={index} updateReaction={updateReaction} user={user} />
                 ))}
             </>
           )}

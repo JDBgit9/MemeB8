@@ -23,20 +23,20 @@ const styles =  {
 }
 
 class Media extends Component {
-    handleLike(id, likes) {
+    handleLike(id, likes, email) {
         console.log(id)
         try{
-            axios.post("/media/likes/add", {id:id,like:likes+1}).then(response=>{
+            axios.post("/media/likes/add", {id:id,like:likes+1, email:email}).then(response=>{
                 let object=this.props.media;
                 object.likes++
                 this.props.updateReaction(object, this.props.index)    
             })
         } catch(error){console.log(error)}
     }
-        handleDislike(id, dislikes) {
+        handleDislike(id, dislikes, email) {
             console.log(id)
             try{
-                axios.post("/media/dislikes/add", {id:id,like:dislikes+1}).then(response=>{
+                axios.post("/media/dislikes/add", {id:id,like:dislikes+1, email:email}).then(response=>{
                     let object=this.props.media;
                     object.dislikes++
                     this.props.updateReaction(object, this.props.index)    
@@ -45,6 +45,7 @@ class Media extends Component {
         }
 
     render(){ 
+        console.log(this.props.user)
         const { classes, 
             media: { 
                 _id,
@@ -101,9 +102,9 @@ class Media extends Component {
                     </div>
                     <div className="reactions">
                     <div className="reaction">
-                    <ThumbUpIcon onClick={()=>this.handleLike(_id, likes)}/><span className="reaction_count">{likes}</span></div>
+                    <ThumbUpIcon onClick={()=>this.handleLike(_id, likes, this.props.user.email)}/><span className="reaction_count">{likes}</span></div>
                     <div className="reaction">
-                    <ThumbDownAltIcon onClick={()=>this.handleDislike(_id, dislikes)}/><span className="reaction_count">{dislikes}</span> 
+                    <ThumbDownAltIcon onClick={()=>this.handleDislike(_id, dislikes, this.props.user.email)}/><span className="reaction_count">{dislikes}</span> 
                     </div>
                     </div>
                     <div className="media_synopsis">
@@ -115,10 +116,10 @@ class Media extends Component {
                     }
 
                        {
-                        source2?.length>0&&(<Typography variant="body1" color="textSecondary"><a href={source2} target="_blank">{source2}</a></Typography>)
+                        source2?.length>0&&(<Typography variant="body1" color="textSecondary"><a href={source2} target="_blank">Supporting Link</a></Typography>)
                     }
                         {
-                            source3?.length>0&&(<Typography variant="body1" color="textSecondary"><a href={source3} target="_blank">{source3}</a></Typography>)
+                            source3?.length>0&&(<Typography variant="body1" color="textSecondary"><a href={source3} target="_blank">Supporting Link</a></Typography>)
                         }
                 </div>
                 </CardContent>
