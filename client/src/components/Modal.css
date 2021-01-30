@@ -8,3 +8,15 @@
     background: #ffffff;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.65);
 }
+.modal .close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid #000000;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+}
