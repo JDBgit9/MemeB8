@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import "./Media.css"
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import ThumbDownAltIcon from '@material-ui/icons/ThumbDownAlt';
-
+import Modal from "./Modal"
 // MUI Stuff
 import { withStyles } from '@material-ui/core/styles'
 import Card from '@material-ui/core/Card';
@@ -23,6 +23,15 @@ const styles =  {
 }
 
 class Media extends Component {
+    constructor(props){
+        super(props);
+        this.state={
+            modalState: false
+        }
+    }
+    handleModalState(state){
+        this.setState({modalState: state})
+    }
     handleLike(id, likes, email) {
         console.log(id)
         try{
@@ -65,9 +74,7 @@ class Media extends Component {
             },
             index, updateReaction
         } = this.props;
-      
-        
-        
+         
         return(
             <Card className={classes.card}>
                 <CardContent  className={classes.content}>
@@ -108,7 +115,10 @@ class Media extends Component {
                     </div>
                     </div>
                     <div className="media_synopsis">
-                    <Typography variant="body1" color="textSecondary">{synopsis.length>150?`${synopsis.substring(0,150)}...`:synopsis}</Typography>
+                    <Typography variant="body1" color="textSecondary">
+                        {synopsis.length>150?`${synopsis.substring(0,150)}...`:synopsis}
+                        {synopsis.length>150?(<span className="readMore" onClick={()=>this.handleModalState(true)}>Read More</span>):""}
+                    </Typography>
                     </div>
                     <div className="media_sources">
                     {
