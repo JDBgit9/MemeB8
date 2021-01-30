@@ -72,3 +72,9 @@ color: green;
     font-size: 5px;
     width: 385px;
 }
+.readMore {
+    color: rgb(155, 0, 0);
+    font-weight: 500;
+    margin-left: 5px;
+    cursor: pointer;
+}
