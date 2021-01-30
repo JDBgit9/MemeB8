@@ -28,6 +28,7 @@ class Media extends Component {
         this.state={
             modalState: false
         }
+        this.handleModalState=this.handleModalState.bind(this)
     }
     handleModalState(state){
         this.setState({modalState: state})
@@ -76,6 +77,7 @@ class Media extends Component {
         } = this.props;
          
         return(
+            <>
             <Card className={classes.card}>
                 <CardContent  className={classes.content}>
                     <Typography variant="body2"
@@ -134,6 +136,13 @@ class Media extends Component {
                 </div>
                 </CardContent>
             </Card>
+            {
+                (this.state.modalState && synopsis.length>150)&&
+                (
+                    <Modal body={synopsis} modalState={this.handleModalState}/>
+                )
+            }
+            </>
         );
     }
 }
