@@ -1,4 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import Media from "../components/Media";
+
 
 export class profile extends Component {
     render() {
@@ -19,9 +21,10 @@ export class profile extends Component {
                           display:"right",
                           justifyContent:"left",
                           alignItems: "center", 
+                          marginBottom: "200px"
                           }}>
-                          <h3>UserName Goes Here</h3>
-                      <div>
+                          <h2>John Doe</h2>
+                      <div style={{display: "left", justifyContent:"space-between"}}>
                           <h5>Points 100</h5>
                           <h5>Debates 0</h5> 
                           <h5>Wins 0</h5>
@@ -31,6 +34,9 @@ export class profile extends Component {
                        </div>
                       </div>
                   </div >
+               </div>
+               <div className="media" style={{display:"center"}}>
+                   
                </div>
             </div>
         )
