@@ -22,6 +22,16 @@ app.use(express.json());
 
 app.get("/media", async (request, response) => {
   console.log("MEDIA IS BEING REQUESTED");
+  if (request.body.id){
+    try{
+      let result=await Media.findOne({"_id":ObjectId(request.body.id)}).exec();
+      response.send(result)
+    } catch(error)
+    {console.error("MEDIA FINISHED ERROR: ", error);
+    response.status(500).send(error);
+  }
+  }
+  else{ 
   try {
     let result = await Media.find().exec();
     console.log("MEDIA FINISHED SUCCESS\n");
@@ -31,6 +41,7 @@ app.get("/media", async (request, response) => {
     console.error("MEDIA FINISHED ERROR: ", error);
     response.status(500).send(error);
   }
+}
 });
 
 app.post("/media", async (request, response) => {
