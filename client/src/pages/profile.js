@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import Media from "../components/Media";
-
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
 
 export class profile extends Component {
     render() {
         return (
+            <>
             <div>
                <div>
                   <div style={{
@@ -24,21 +26,26 @@ export class profile extends Component {
                           marginBottom: "200px"
                           }}>
                           <h2>John Doe</h2>
-                      <div style={{display: "left", justifyContent:"space-between"}}>
-                          <h5>Points 100</h5>
-                          <h5>Debates 0</h5> 
-                          <h5>Wins 0</h5>
-                          <h5>Losses 0</h5>
-                          <h5>Memebaters 0</h5>
-                          <h5>Following 0</h5>
-                       </div>
+                 <Card className="card">
+                        <CardContent  className="stats">
+                          <div style={{display: "left", justifyContent:"space-between"}}>
+                          <h5>Points: 100</h5>
+                          <h5>Debates: 0</h5> 
+                          <h5>Wins: 0</h5>
+                          <h5>Losses: 0</h5>
+                          <h5>Memebaters: 0</h5>
+                          <h5>Following: 0</h5>
+                          </div>
+                       </CardContent>
+                </Card>
                       </div>
                   </div >
+             
                </div>
                <div className="media" style={{display:"center"}}>
-                   
                </div>
             </div>
+            </>
         )
     }
 }
