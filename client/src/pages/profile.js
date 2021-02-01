@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Media from "../components/Media";
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
+import "./profile.css";
 
 export class profile extends Component {
     render() {
