@@ -10,7 +10,10 @@
     background-color: dodgerblue;
     color: white;
     font-size: 18px;
-
+}
+.media .replyBtn {
+    flex-grow: 1;
+    text-align: center;
 }
 .media_details {
     display: flex;
