@@ -137,7 +137,7 @@ class Media extends Component {
                 </CardContent>
             </Card>
             <div className="replyBtn">
-               <Link to={`/memebate?id=${_id}`} className="btn">Reply</Link> 
+               <Link to={`/memebate/${_id}`} className="btn">Reply</Link> 
             </div>
             {
                 (this.state.modalState && synopsis.length>150)&&
