@@ -77,7 +77,7 @@ class Media extends Component {
         } = this.props;
          
         return(
-            <>
+            <div className="media">
             <Card className={classes.card}>
                 <CardContent  className={classes.content}>
                     <Typography variant="body2"
@@ -136,13 +136,16 @@ class Media extends Component {
                 </div>
                 </CardContent>
             </Card>
+            <div className="replyBtn">
+               <Link to="/memebate" className="btn">Reply</Link> 
+            </div>
             {
                 (this.state.modalState && synopsis.length>150)&&
                 (
                     <Modal body={synopsis} modalState={this.handleModalState}/>
                 )
             }
-            </>
+            </div>
         );
     }
 }
