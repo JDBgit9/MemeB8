@@ -55,10 +55,8 @@ export class profile extends Component {
                        </CardContent>
                 </Card>
                       </div>
-                  </div >
-                
-                  </div>
-        
+                  </div >               
+                  </div>       
                </div>
                <div className="media" style={{display:"center"}}>
                </div>
