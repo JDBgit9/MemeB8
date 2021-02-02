@@ -26,7 +26,7 @@ export class profile extends Component {
                           alignItems: "center", 
                           marginBottom: "200px"
                           }}>
-                          <h2>John Doe</h2>
+                          <h1>John Doe</h1>
                  <Card className="card">
                         <CardContent  className="stats">
                           <div style={{display: "left", justifyContent:"space-between"}}>
@@ -55,8 +55,7 @@ export class profile extends Component {
                        </CardContent>
                 </Card>
                   </div>     
-                      </div>
-                      
+                      </div>  
                   </div >   
                </div>
                <div className="media" style={{display:"center"}}>
