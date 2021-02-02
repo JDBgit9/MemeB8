@@ -30,6 +30,7 @@ export class profile extends Component {
                  <Card className="card">
                         <CardContent  className="stats">
                           <div style={{display: "left", justifyContent:"space-between"}}>
+                           <h4>Debater Statistics</h4>   
                           <h5>Points: 100</h5>
                           <h5>Debates: 0</h5> 
                           <h5>Wins: 0</h5>
@@ -39,9 +40,24 @@ export class profile extends Component {
                           </div>
                        </CardContent>
                 </Card>
+                <br>
+                </br>
+                <div className="memebater_stats">
+                  <Card className="card">
+                        <CardContent  className="stats">
+                          <div style={{display: "left", justifyContent:"space-between"}}>
+                          <h4>Memebater Statistics</h4>
+                          <h5>Memes: 0</h5>
+                          <h5>laughs: 0</h5>
+                          <h5>likes: 0</h5>
+                          <h4>dislikes: 0</h4>
+                          </div>
+                       </CardContent>
+                </Card>
+                  </div>     
                       </div>
-                  </div >
-             
+                      
+                  </div >   
                </div>
                <div className="media" style={{display:"center"}}>
                </div>
