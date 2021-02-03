@@ -13,7 +13,7 @@ function Memebate() {
             setLoading(true);
             setIsError(false);
             try {
-              const resp = await axios.get("/media", {body:{id:id}});
+              const resp = await axios.get(`/media/${id}`);
               console.log(resp)
               if (!ignore) setData(resp.data);
             } catch (error) {
@@ -29,8 +29,11 @@ function Memebate() {
     }, [id])
 
     return (
+
         <div className="memebate">
-            {id}
+            <div className="subject">
+              <h1>Title</h1>
+            </div>
         </div>
     )
 }
