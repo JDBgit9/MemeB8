@@ -6,6 +6,7 @@ const config = require('config');
 const Media = require("./models/media");
 const Memebater = require("./models/memebater");
 const { response } = require("express");
+const ObjectId =require("mongodb").ObjectId;
 
 const app = express();
 
@@ -21,6 +22,16 @@ app.use(express.json());
 
 app.get("/media", async (request, response) => {
   console.log("MEDIA IS BEING REQUESTED");
+  if (request.body.id){
+    try{
+      let result=await Media.findOne({"_id":ObjectId(request.body.id)}).exec();
+      response.send(result)
+    } catch(error)
+    {console.error("MEDIA FINISHED ERROR: ", error);
+    response.status(500).send(error);
+  }
+  }
+  else{ 
   try {
     let result = await Media.find().exec();
     console.log("MEDIA FINISHED SUCCESS\n");
@@ -30,6 +41,7 @@ app.get("/media", async (request, response) => {
     console.error("MEDIA FINISHED ERROR: ", error);
     response.status(500).send(error);
   }
+}
 });
 
 app.post("/media", async (request, response) => {
@@ -45,7 +57,10 @@ app.post("/media", async (request, response) => {
   });
 });
 app.post("/media/likes/add", async(request, response)=> {
-  Media.update({_id:resquest.body.id}, {$set:{"likes":request.body.likes}}).then(resp=>response.status(200).send(request.body))
+  Media.update({_id:ObjectId(request.body.id)}, {$set:{likes: request.body.like}}).then(resp=>response.status(200).send(request.body))
+})
+app.post("/media/dislikes/add", async(request, response)=> {
+  Media.update({_id:ObjectId(request.body.id)}, {$set:{dislikes: request.body.like}}).then(resp=>response.status(200).send(request.body))
 })
 app.post("login")
 

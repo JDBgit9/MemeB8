@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
-
+import Memebate from "./components/Memebate"
 // MUI Objects
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 
@@ -31,6 +31,7 @@ function App() {
             <Route exact path="/userlogin" component={login} />
             <Route exact path="/signup" component={signup} />
             <Route exact path="/profile" component={profile} />
+            <Route exact path="/memebate/:id" component={Memebate} />
           </Switch>
         </div>
       </Router>

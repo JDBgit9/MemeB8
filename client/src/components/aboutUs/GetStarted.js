@@ -97,10 +97,10 @@ const GetStarted = () => {
                     className={classes.desc}
                   >
                     As a MemeBater you get to engage in the debates by posting
-                    memes, likes, dislikes, gifs, and emojis in the comment
-                    section. Memebaters are most important because you are the
+                    memes, likes, dislikes, gifs, and emojis in the memebate
+                    section. Memebaters are most important on this platform because you are the
                     judges of each of the debates on this platform. So be nice
-                    you never know who you'll meet. You must sign up to become a
+                    you never know who you'll meet. Anyone can be a memebater but you must sign up and create a profile to become a
                     MemeBater.
                   </Typography>
                 </CardContent>
@@ -125,10 +125,12 @@ const GetStarted = () => {
                     component="p"
                     className={classes.desc}
                   >
-                    Debaters to state you case simply create an account and then
+                    Debaters are important as well because you start the 
+                    dialogue and there are many categories for you to choose from to debate on.
+                    To state your case simply create an account and then
                     record an audio or video media link of your favorite topic
                     (anonymous, or non-anonymous) to your profile page then
-                    watch the fun memebating begin.
+                    watch the fun memebating and debating begin.
                   </Typography>
                 </CardContent>
               </Card>
@@ -155,9 +157,7 @@ const GetStarted = () => {
                     If you want to join an open discussion simply add a media
                     video or audio (anonymous or non-anonymous) link with oral
                     response to the conversation or just send memes, that's
-                    always fun. We hope that this will be a step in a direction
-                    of bringing humanity together through harmony,
-                    understanding, and honest communication.
+                    always fun. 
                   </Typography>
                 </CardContent>
               </Card>

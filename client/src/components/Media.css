@@ -1,0 +1,97 @@
+.media {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.media .replyBtn .btn {
+    padding: 0.5em 3em;
+    text-align: center;
+    border-radius: 999px;
+    background-color: dodgerblue;
+    color: white;
+    font-size: 18px;
+}
+.media .replyBtn {
+    flex-grow: 1;
+    text-align: center;
+}
+.media_details {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    box-sizing: border-box;
+}
+.media_details .detail {
+    padding: 0.5em 1em;
+    text-align: center;
+    background-color: #999999;
+    color: #ffffff;
+    margin-left: 10px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+.media_title {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 385px;
+}
+.media_title .MuiTypography-root {
+    max-width: 200px;
+}
+.reactions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+}
+.reaction {
+    color: cornflowerblue;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    
+}
+.reaction_count {
+    margin-left: 5px;
+    color: #333333;
+}
+.reaction:hover {
+    color: green;
+}
+.reaction {
+    color: cornflowerblue;
+    position: relative;
+    margin-top: auto;
+    align-items: center;
+}
+.reaction:hover {
+color: green;
+}
+.media_synopsis {
+    display: flex;
+    background-color: #ffffff;
+    color: #140202;
+    justify-content: left;
+    align-items: left;
+    width: 385px;
+    font-size: 5px;
+    border-radius: 5px;
+    border: 1px solid #333333; 
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 15px 0;
+    
+}
+.media_sources {
+    padding: 0.5em 1em;
+    font-size: 5px;
+    width: 385px;
+}
+.readMore {
+    color: rgb(155, 0, 0);
+    font-weight: 500;
+    margin-left: 5px;
+    cursor: pointer;
+}

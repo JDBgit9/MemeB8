@@ -8,7 +8,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { useAuth0 } from "@auth0/auth0-react";
 
 // Component
-import Memebate from "../components/Memebate";
+import Media from "../components/Media";
 import Profile from "../components/Profile";
 import Post from "../components/Post";
 import AboutUs from "../components/aboutUs/AboutUs";
@@ -51,6 +51,14 @@ console.log(data)
       ignore = true;
     };
   }, [query]);
+  const updateReaction = (object, index)=>{
+    setLoading(true)
+    let tempData=data;
+    tempData[index]=object;
+    console.log(tempData)
+    setData(tempData)
+    setLoading(false)
+  }
 
   if (isLoading) {
     return <>Loading ...</>;
@@ -66,9 +74,9 @@ console.log(data)
             <>Loading ...</>
           ) : (
             <>
-              {data.length > 0 &&
-                data.map((memebate, index) => (
-                  <Memebate key={index} memebate={memebate} />
+              {data?.length > 0 &&
+                data?.map((media, index) => (
+                  <Media key={index} media={media} index={index} updateReaction={updateReaction} user={user} />
                 ))}
             </>
           )}

@@ -1,10 +1,10 @@
 const mongoose = require('mongoose')
 const config = require('config');
-const db = config.get('MONGO_URI');
+
 
 const connectDB = async () => {
     try {
-        await mongoose.connect(db, {
+        await mongoose.connect("mongodb+srv://110120MongoDBatlas_:110120MongoDBatlas_@workout-tracker.bkgq3.mongodb.net/Memebate?retryWrites=true&w=majority", {
             useNewUrlParser: true, 
             useUnifiedTopology: true,
             useCreateIndex: true,
