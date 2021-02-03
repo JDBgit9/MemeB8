@@ -6,7 +6,7 @@ function Memebate() {
     let {id}=useParams();
     const [loading, setLoading]=useState(false)
     const [isError, setIsError]=useState(false)
-    const [data, setData]=useState()
+    const [data, setData]=useState([])
     useEffect(()=> {
         let ignore = false;
         async function fetchData() {
@@ -14,6 +14,7 @@ function Memebate() {
             setIsError(false);
             try {
               const resp = await axios.get("/media", {body:{id:id}});
+              console.log(resp)
               if (!ignore) setData(resp.data);
             } catch (error) {
               console.error(error);
@@ -21,9 +22,7 @@ function Memebate() {
             }
             setLoading(false);
           }
-
            fetchData();
-          console.log(data)
           return () => {
             ignore = true;
           };
