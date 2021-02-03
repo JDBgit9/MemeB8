@@ -3,12 +3,15 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import ThumbDownAltIcon from "@material-ui/icons/ThumbDownAlt";
+import { useAuth0 } from "@auth0/auth0-react"
 
 function Memebate() {
   let { id } = useParams();
   const [loading, setLoading] = useState(false);
   const [isError, setIsError] = useState(false);
   const [data, setData] = useState({});
+  const  user = useAuth0();
+
   useEffect(() => {
     let ignore = false;
     async function fetchData() {
@@ -29,7 +32,43 @@ function Memebate() {
       ignore = true;
     };
   }, [id]);
-
+  const handleLike=(id, likes, email)=>{
+    console.log(id);
+    try {
+      axios
+        .post("/media/likes/add", { id: id, like: likes + 1, email: email })
+        .then((response) => {
+          let object = data;
+          object.likes++;
+          updateReaction(object);
+        });
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  const handleDislike=(id, dislikes, email)=> {
+    console.log(id);
+    try {
+      axios
+        .post("/media/dislikes/add", {
+          id: id,
+          like: dislikes + 1,
+          email: email,
+        })
+        .then((response) => {
+          let object = data;
+          object.dislikes++;
+          updateReaction(object);
+        });
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  const updateReaction = (object, index)=>{
+    setLoading(true) 
+    setData(object)
+    setLoading(false)
+  }
   return (
     <div className="memebate">
       <div className="subject">
@@ -58,7 +97,7 @@ function Memebate() {
               <div className="reaction">
                 <ThumbUpIcon
                   onClick={() =>
-                    this.handleLike(id, data.likes, this.props.user.email)
+                    handleLike(id, data.likes, user.email)
                   }
                 />
                 <span className="reaction_count">{data.likes}</span>
@@ -66,7 +105,7 @@ function Memebate() {
               <div className="reaction">
                 <ThumbDownAltIcon
                   onClick={() =>
-                    this.handleDislike(id, data.dislikes, this.props.user.email)
+                    handleDislike(id, data.dislikes, user.email)
                   }
                 />
                 <span className="reaction_count">{data.dislikes}</span>
