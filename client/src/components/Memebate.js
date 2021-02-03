@@ -111,6 +111,9 @@ function Memebate() {
                 <span className="reaction_count">{data.dislikes}</span>
               </div>
             </div>
+            <div className="synopsis">
+              {data.synopsis}
+            </div>
       </div>
     </div>
   );
