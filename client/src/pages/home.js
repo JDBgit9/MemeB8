@@ -9,7 +9,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 // Component
 import Media from "../components/Media";
-import Profile from "../components/Profile";
+import Profile from "../components/User";
 import Post from "../components/Post";
 import AboutUs from "../components/aboutUs/AboutUs";
 import Details from "../components/aboutUs/Details";

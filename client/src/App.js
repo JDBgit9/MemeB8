@@ -26,12 +26,12 @@ function App() {
         <Navbar />
         <div className="container">
           <Switch>
-            <Route exact path="/" component={home} />
+            {/* <Route exact path="/" component={home} /> */}
             {/* <Route exact path="/AboutUs" component={aboutUs}/> */}
             <Route exact path="/userlogin" component={login} />
             <Route exact path="/signup" component={signup} />
             <Route exact path="/profile" component={profile} />
-            <Route exact path="/memebate/:id" component={Memebate} />
+            <Route exact path="/memebate/:id"><Memebate/></Route>
           </Switch>
         </div>
       </Router>

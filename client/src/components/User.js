@@ -66,7 +66,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Profile = () => {
+const User = () => {
   const classes = useStyles();
   const { user, isAuthenticated, isLoading, loginWithRedirect } = useAuth0();
   // credentials: { handle, createdAt, imageUrl, bio, website, location },
@@ -144,4 +144,4 @@ const Profile = () => {
 //   classes: PropTypes.object.isRequired,
 // };
 
-export default Profile;
+export default User;

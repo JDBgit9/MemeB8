@@ -21,8 +21,9 @@ function Memebate() {
             }
             setLoading(false);
           }
-      console.log(data)
-          fetchData();
+
+           fetchData();
+          console.log(data)
           return () => {
             ignore = true;
           };
