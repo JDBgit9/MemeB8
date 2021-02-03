@@ -5,7 +5,7 @@ const config = require('config');
 
 const Media = require("./models/media");
 const Memebater = require("./models/memebater");
-const { response } = require("express");
+const { response, request } = require("express");
 const ObjectId =require("mongodb").ObjectId;
 
 const app = express();
@@ -43,7 +43,16 @@ app.get("/media", async (request, response) => {
   }
 }
 });
-
+app.get("/media/:id*", async(request, response)=>{
+ 
+    try{
+      let result=await Media.findOne({"_id":ObjectId(request.params["id"])}).exec();
+      response.send(result)
+    } catch(error)
+    {console.error("MEDIA FINISHED ERROR: ", error);
+    response.status(500).send(error);
+  }
+})
 app.post("/media", async (request, response) => {
   const media = new Media(request.body);
 
