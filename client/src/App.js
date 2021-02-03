@@ -10,7 +10,6 @@ import themeObject from "./util/theme";
 
 // Pages
 import home from "./pages/home";
-import login from "./pages/userlogin";
 import signup from "./pages/signup";
 import profile from "./pages/profile";
 // import aboutUs from './pages/aboutUs'
@@ -28,10 +27,10 @@ function App() {
           <Switch>
             <Route exact path="/" component={home} />
             {/* <Route exact path="/AboutUs" component={aboutUs}/> */}
-            <Route exact path="/userlogin" component={login} />
+            {/* <Route exact path="/userlogin" component={login} /> */}
             <Route exact path="/signup" component={signup} />
             <Route exact path="/profile" component={profile} />
-            <Route exact path="/memebate/:id" component={Memebate} />
+            <Route exact path="/memebate/:id"><Memebate/></Route>
           </Switch>
         </div>
       </Router>

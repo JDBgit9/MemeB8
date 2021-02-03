@@ -50,7 +50,7 @@ export class profile extends Component {
                           <h5>Memes: 0</h5>
                           <h5>laughs: 0</h5>
                           <h5>likes: 0</h5>
-                          <h4>dislikes: 0</h4>
+                          <h5>dislikes: 0</h5>
                           </div>
                        </CardContent>
                 </Card>
