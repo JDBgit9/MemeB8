@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import ThumbUpIcon from "@material-ui/icons/ThumbUp";
+import ThumbDownAltIcon from "@material-ui/icons/ThumbDownAlt";
 
 function Memebate() {
   let { id } = useParams();
@@ -52,6 +54,24 @@ function Memebate() {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               ></iframe>
+                <div className="reactions">
+              <div className="reaction">
+                <ThumbUpIcon
+                  onClick={() =>
+                    this.handleLike(id, data.likes, this.props.user.email)
+                  }
+                />
+                <span className="reaction_count">{data.likes}</span>
+              </div>
+              <div className="reaction">
+                <ThumbDownAltIcon
+                  onClick={() =>
+                    this.handleDislike(id, data.dislikes, this.props.user.email)
+                  }
+                />
+                <span className="reaction_count">{data.dislikes}</span>
+              </div>
+            </div>
       </div>
     </div>
   );
