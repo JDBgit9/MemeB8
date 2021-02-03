@@ -1,6 +1,7 @@
 import { Grid } from "@material-ui/core";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import "./home.css";
 
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -67,7 +68,7 @@ console.log(data)
   if (isAuthenticated) {
     return (
       <Grid container className={classes.container} spacing={6}>
-        <Grid item sm={8} xs={12}>
+        <Grid className="mediaContainer" item sm={8} xs={12}>
           {isError && <>Something went wrong ...</>}
 
           {isLoading ? (
