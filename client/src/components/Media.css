@@ -2,6 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: rgb(131, 34, 177);
 }
 .media .replyBtn .btn {
     padding: 0.5em 3em;
