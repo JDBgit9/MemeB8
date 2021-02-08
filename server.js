@@ -102,6 +102,18 @@ app.post("/memebater", async (request, response) => {
     }
   });
 });
+app.get("/default-memes", async(request, response)=>{
+  const api="384be08c76d654f4105db56ec7dd11"
+  try {
+  fetch("http://memebuild.com/api/1.0/getDefaultMemes", {headers:{"API-KEY":api, "Access-Control-Allow-Origin":"*",cors:"no-cors"}})
+  .then((res) => {
+    const _meme = res;
+    console.log(res)
+    response.status(200).send(res)
+  }).catch(error=>{
+    console.log(error)})
+  } catch(error){console.log(error)}
+})
 
 // Serve static assets in production
 if (process.env.NODE_ENV === 'production') {

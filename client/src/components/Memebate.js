@@ -5,6 +5,7 @@ import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import ThumbDownAltIcon from "@material-ui/icons/ThumbDownAlt";
 import { useAuth0 } from "@auth0/auth0-react"
 import "./Memebate.css";
+import MemeBuilder from "./MemeBuilder"
 
 function Memebate() {
   let { id } = useParams();
@@ -116,6 +117,7 @@ function Memebate() {
               {data.synopsis}
             </div>
       </div>
+      <MemeBuilder/>
     </div>
   );
 }
