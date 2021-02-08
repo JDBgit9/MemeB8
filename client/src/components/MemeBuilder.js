@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
+import { response } from "express";
 
   function MemeBuilder() {
   const [meme, setMeme] = useState([]);
@@ -39,9 +40,7 @@ import { useHistory } from "react-router-dom";
 
   useEffect(() => {
     fetch("/default-memes")
-      .then((res) => {
-        res.json();
-      })
+    .then(response=>{return response.json()})
       .then((res) => {
         const _meme = res;
         console.log(res)
