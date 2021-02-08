@@ -3,16 +3,18 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import ThumbDownAltIcon from "@material-ui/icons/ThumbDownAlt";
-import { useAuth0 } from "@auth0/auth0-react"
+import { useAuth0 } from "@auth0/auth0-react";
 import "./Memebate.css";
-import MemeBuilder from "./MemeBuilder"
+import MemeBuilder from "./MemeBuilder";
+import { set } from "mongoose";
 
 function Memebate() {
   let { id } = useParams();
   const [loading, setLoading] = useState(false);
   const [isError, setIsError] = useState(false);
   const [data, setData] = useState({});
-  const  user = useAuth0();
+  const user = useAuth0();
+  const [memeBuilderState, setMemeBuilderState] = useState(false);
 
   useEffect(() => {
     let ignore = false;
@@ -34,7 +36,7 @@ function Memebate() {
       ignore = true;
     };
   }, [id]);
-  const handleLike=(id, likes, email)=>{
+  const handleLike = (id, likes, email) => {
     console.log(id);
     try {
       axios
@@ -47,8 +49,8 @@ function Memebate() {
     } catch (error) {
       console.log(error);
     }
-  }
-  const handleDislike=(id, dislikes, email)=> {
+  };
+  const handleDislike = (id, dislikes, email) => {
     console.log(id);
     try {
       axios
@@ -65,59 +67,57 @@ function Memebate() {
     } catch (error) {
       console.log(error);
     }
-  }
-  const updateReaction = (object, index)=>{
-    setLoading(true) 
-    setData(object)
-    setLoading(false)
-  }
+  };
+  const updateReaction = (object, index) => {
+    setLoading(true);
+    setData(object);
+    setLoading(false);
+  };
   return (
     <div className="memebate">
       <div className="subject">
         <div className="title">
           <h1>{data.title}</h1>
           <div className="tags">
-            <div className="tag">
-              {data.category}
-            </div>
-            <div className="tag">
-              {data.format}
-            </div>
+            <div className="tag">{data.category}</div>
+            <div className="tag">{data.format}</div>
           </div>
         </div>
         <iframe
-                width="100%"
-                height="500"
-                src={`https://www.youtube.com/embed/${
-                  data?.debate?.indexOf("=") > -1 ? data?.debate?.split("=")[1] : data.debate
-                }`}
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-                <div className="reactions">
-              <div className="reaction">
-                <ThumbUpIcon
-                  onClick={() =>
-                    handleLike(id, data.likes, user.email)
-                  }
-                />
-                <span className="reaction_count">{data.likes}</span>
-              </div>
-              <div className="reaction">
-                <ThumbDownAltIcon
-                  onClick={() =>
-                    handleDislike(id, data.dislikes, user.email)
-                  }
-                />
-                <span className="reaction_count">{data.dislikes}</span>
-              </div>
-            </div>
-            <div className="synopsis">
-              {data.synopsis}
-            </div>
+          width="100%"
+          height="500"
+          src={`https://www.youtube.com/embed/${
+            data?.debate?.indexOf("=") > -1
+              ? data?.debate?.split("=")[1]
+              : data.debate
+          }`}
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+        <div className="reactions">
+          <div className="reaction">
+            <ThumbUpIcon
+              onClick={() => handleLike(id, data.likes, user.email)}
+            />
+            <span className="reaction_count">{data.likes}</span>
+          </div>
+          <div className="reaction">
+            <ThumbDownAltIcon
+              onClick={() => handleDislike(id, data.dislikes, user.email)}
+            />
+            <span className="reaction_count">{data.dislikes}</span>
+          </div>
+        </div>
+        <div className="synopsis">{data.synopsis}</div>
       </div>
-      <MemeBuilder/>
+      {!memeBuilderState && (
+        <button className="btn" onClick={() => setMemeBuilderState(true)}>
+          Memebate
+        </button>
+      )}
+
+      {memeBuilderState && <MemeBuilder />}
     </div>
   );
 }
