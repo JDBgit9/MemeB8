@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-import { response } from "express";
+
 
   function MemeBuilder() {
   const [meme, setMeme] = useState([]);
+  const [defaultMemes, setDefaultMemes]=useState([])
   const [memeIndex, setMemeIndex] = useState(0);
   const [captions, setCaptions] = useState([]);
   const api = "384be08c76d654f4105db56ec7dd11";
@@ -43,9 +44,8 @@ import { response } from "express";
     .then(response=>{return response.json()})
       .then((res) => {
         const _meme = res;
-        console.log(res)
-        shuffleMeme(_meme);
-        setMeme(_meme);
+        console.log(res);
+        setDefaultMemes(res);
       }).catch(error=>{
         console.log(error)
       })
@@ -56,9 +56,9 @@ import { response } from "express";
       setCaptions(Array(meme[memeIndex].box_count).fill(""));
     }
   }, [memeIndex, meme]);
-  return meme.length > 0? (
+  return defaultMemes.length > 0? (
     <div className="container">
-      <button onClick={generateMeme} className="generate">
+      {/* <button onClick={generateMeme} className="generate">
         Generate
       </button>
       <button
@@ -70,7 +70,16 @@ import { response } from "express";
       {captions.map((c, index) => (
         <input onChange={(e) => updateCaption(e, index)} key={index} />
       ))}
-      <img alt="meme" src={meme[memeIndex].url} />
+      <img alt="meme" src={meme[memeIndex].url} /> */}
+      <div className="imageselector">
+          {
+              defaultMemes?.map((dmeme, index)=>{
+                return(
+                    <img src={`https://s3-us-west-2.amazonaws.com/memebuilder/default/${dmeme.file}.jpg`} alt={dmeme.name}/>
+                )
+              })
+          }
+      </div>
     </div>
   ) : (
     <></>
