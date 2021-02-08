@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
+import "./Memebuilder.css";
 
 
   function MemeBuilder() {
