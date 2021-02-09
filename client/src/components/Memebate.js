@@ -79,8 +79,8 @@ function Memebate() {
         <div className="title">
           <h1>{data.title}</h1>
           <div className="tags">
-            <div className="tag">{data.category}</div>
-            <div className="tag">{data.format}</div>
+            <div className="tag-cat">{data.category}</div>
+            <div className="tag-for">{data.format}</div>
           </div>
         </div>
         <iframe
