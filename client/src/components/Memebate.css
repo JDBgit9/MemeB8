@@ -40,3 +40,17 @@ background-color: skyblue;
     width: 80px;
     height: 25px;
 }
+.synopsis {
+    display: flex;
+    background-color: #ffffff;
+    color: #140202;
+    justify-content: left;
+    align-items: left;
+    width: 100%;
+    font-size: 20px;
+    border-radius: 5px;
+    border: 1px solid #333333; 
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 15px 0;
+}
