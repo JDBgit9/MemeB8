@@ -5,6 +5,7 @@ import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import ThumbDownAltIcon from "@material-ui/icons/ThumbDownAlt";
 import { useAuth0 } from "@auth0/auth0-react";
 import "./Memebate.css";
+import Typography from "@material-ui/core/Typography";
 import MemeBuilder from "./MemeBuilder";
 import { set } from "mongoose";
 
@@ -109,7 +110,23 @@ function Memebate() {
             <span className="reaction_count">{data.dislikes}</span>
           </div>
         </div>
-        <div className="synopsis">{data.synopsis}</div>
+        <div className="synopsis">{data.synopsis}
+        {/* <Typography variant="body1" color="textSecondary">
+                {synopsis.length > 150
+                  ? `${synopsis.substring(0, 150)}...`
+                  : synopsis}
+                {synopsis.length > 150 ? (
+                  <span
+                    className="readMore"
+                    onClick={() => this.handleModalState(true)}
+                  >
+                    Read More
+                  </span>
+                ) : (
+                  ""
+                )}
+              </Typography> */}
+        </div>
       </div>
       {!memeBuilderState && (
         <button className="btn" onClick={() => setMemeBuilderState(true)}>
