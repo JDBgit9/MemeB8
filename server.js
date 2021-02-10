@@ -106,7 +106,7 @@ app.post("/memebater", async (request, response) => {
 app.get("/default-memes", async(request, response)=>{
   const api="384be08c76d654f4105db56ec7dd11"
   try {
-  fetch("http://memebuild.com/api/1.0/getDefaultMemes?limit=50", {headers:{"API-KEY":api, "Access-Control-Allow-Origin":"*",cors:"no-cors"}})
+  fetch("http://memebuild.com/api/1.0/getDefaultMemes?limit=100", {headers:{"API-KEY":api, "Access-Control-Allow-Origin":"*",cors:"no-cors"}})
   .then(response=>{return response.json()})
   .then((res) => {
     const _meme = res;
