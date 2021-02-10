@@ -51,7 +51,7 @@ const handleSubmit=(e)=>{
 
   }
   console.log(memeObject)
-  fetch("http://memebuild.com/api/1.0/generateMeme", {
+  fetch("/default-memes", {
     method: "POST",
     body: JSON.stringify(memeObject)
   }).then(response=>{console.log(response.json())})

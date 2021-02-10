@@ -16,11 +16,6 @@ connectDB()
 app.use(cors({ origin: true }));
 app.use(express.json());
 
-// // Define routes
-// router.use("/media", './routes/api/media');
-// router.use("/user", './routes/api/user');
-// router.use("/memebaters", './routes/api/memebater');
-
 app.get("/media", async (request, response) => {
   console.log("MEDIA IS BEING REQUESTED");
   try {
@@ -62,22 +57,6 @@ app.post("/media/dislikes/add", async(request, response)=> {
 })
 app.post("login")
 
-// app.get("/", async function (req, res) {
-//   // try {
-//   //   await client.connect();
-//   //   await listDatabases(client);
-//   // } catch (e) {
-//   //   console.error(e);
-//   // }
-// });
-
-// async function listDatabases(client) {
-//   databasesList = await client.db().admin().listDatabases();
-
-//   console.log("Databases:");
-//   databasesList.databases.forEach((db) => console.log(` - ${db.name}`));
-// }
-
 app.get("/memebater", async (request, response) => {
   console.log("MEMEBATER IS BEING REQUESTED");
   try {
@@ -118,14 +97,17 @@ app.get("/default-memes", async(request, response)=>{
 })
 app.post("/default-memes", async(request, response)=>{
   const api="384be08c76d654f4105db56ec7dd11"
+  console.log(request.body)
   try {
   fetch("http://memebuild.com/api/1.0/generateMeme", {
+    method: "POST",
     headers:{"API-KEY":api, 
     "Access-Control-Allow-Origin":"*",
     cors:"no-cors"
     },
-    body: JSON.stringify(request.body)
-  }).then(resp=>{response.send(resp.json())})
+    body: request.body
+  }).then(resp=>{return resp}).then(res=>{response.send(res)
+  })
 }catch(error){console.log(error)}
 })
 
