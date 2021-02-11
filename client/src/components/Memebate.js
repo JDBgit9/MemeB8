@@ -130,7 +130,7 @@ function Memebate() {
       </div>
       {!memeBuilderState && (
         <button className="btn" onClick={() => setMemeBuilderState(true)}>
-          Memebate
+          Memebate This
         </button>
       )}
 

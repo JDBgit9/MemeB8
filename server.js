@@ -2,7 +2,7 @@ const express = require("express");
 const connectDB = require('./config/db')
 const cors = require("cors");
 const config = require('config');
-
+const bodyParser =require("body-parser");
 const Media = require("./models/media");
 const Memebater = require("./models/memebater");
 const { response, request } = require("express");
@@ -14,7 +14,9 @@ const app = express();
 connectDB()
 
 app.use(cors({ origin: true }));
-app.use(express.json());
+app.use(bodyParser.json())
+let jsonParser = bodyParser.json()
+app.use(bodyParser.urlencoded({extended: false}))
 
 app.get("/media", async (request, response) => {
   console.log("MEDIA IS BEING REQUESTED");
@@ -95,7 +97,7 @@ app.get("/default-memes", async(request, response)=>{
     console.log(error)})
   } catch(error){console.log(error)}
 })
-app.post("/default-memes", async(request, response)=>{
+app.post("/default-memes", jsonParser, async(request, response)=>{
   const api="384be08c76d654f4105db56ec7dd11"
   console.log(request.body)
   try {
