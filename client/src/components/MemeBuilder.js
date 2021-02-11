@@ -44,28 +44,29 @@ function MemeBuilder() {
   const handleSubmit = (e) => {
     e.preventDefault();
     let memeObject = {
-      topText: memeTopText,
-      bottomText: memeBottomText,
-      imgUrl: `https://s3-us-west-2.amazonaws.com/memebuilder/default/${defaultImage}.jpg`,
+      "topText": memeTopText,
+      "bottomText": memeBottomText,
+      "imgUrl": `https://s3-us-west-2.amazonaws.com/memebuilder/default/${defaultImage}.jpg`,
     };
     console.log(memeObject);
-    fetch("/default-memes", {
+    fetch("/default-memes?", {
       method: "POST",
-      "Content-Type": "application/json",
-      body: [memeObject],
+      headers:{
+      "Content-Type": "application/json",},
+      body: JSON.stringify(memeObject)
     }).then((response) => {
-      console.log(response.json());
+      console.log(response.data);
     });
   };
   useEffect(() => {
-    fetch("/default-memes")
+    fetch("https://api.imgflip.com/get_memes")
       .then((response) => {
         return response.json();
       })
       .then((res) => {
         const _meme = res;
         console.log(res);
-        setDefaultMemes(res);
+        setDefaultMemes(res.data.memes);
       })
       .catch((error) => {
         console.log(error);
@@ -102,9 +103,9 @@ function MemeBuilder() {
         {defaultMemes?.map((dmeme, index) => {
           return (
             <img
-              src={`https://s3-us-west-2.amazonaws.com/memebuilder/default/${dmeme.file}.jpg`}
+              src={dmeme.url}
               alt={dmeme.name}
-              onClick={() => handleMemeClick(dmeme.file)}
+              onClick={() => handleMemeClick(dmeme.id)}
             />
           );
         })}

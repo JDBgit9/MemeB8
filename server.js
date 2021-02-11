@@ -85,9 +85,8 @@ app.post("/memebater", async (request, response) => {
   });
 });
 app.get("/default-memes", async(request, response)=>{
-  const api="384be08c76d654f4105db56ec7dd11"
   try {
-  fetch("http://memebuild.com/api/1.0/getDefaultMemes?limit=100", {headers:{"API-KEY":api, "Access-Control-Allow-Origin":"*",cors:"no-cors"}})
+  fetch("https://api.imgflip.com/get_memes", {headers:{"Access-Control-Allow-Origin":"*",cors:"no-cors"}})
   .then(response=>{return response.json()})
   .then((res) => {
     const _meme = res;
@@ -107,8 +106,8 @@ app.post("/default-memes", jsonParser, async(request, response)=>{
     "Access-Control-Allow-Origin":"*",
     cors:"no-cors"
     },
-    body: request.body
-  }).then(resp=>{return resp}).then(res=>{response.send(res)
+    body: JSON.stringify(request.body)
+  }).then(resp=>{return resp.json()}).then(res=>{response.send(res)
   })
 }catch(error){console.log(error)}
 })
