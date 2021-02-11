@@ -41,22 +41,31 @@ function MemeBuilder() {
       array[j] = temp;
     }
   };
+  const serialize = (obj)=> {
+    var str = [];
+    for (var p in obj)
+      if (obj.hasOwnProperty(p)) {
+        str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+      }
+    return str.join("&");
+  }
   const handleSubmit = (e) => {
     e.preventDefault();
     let memeObject = {
-      "topText": memeTopText,
-      "bottomText": memeBottomText,
-      "imgUrl": `https://s3-us-west-2.amazonaws.com/memebuilder/default/${defaultImage}.jpg`,
+      template_id: defaultImage,
+      username: "jdbwebdev",
+      password: "J.JfsG-?YLHx8C@",
+      text0: memeTopText,
+      text1: memeBottomText,
+   
     };
-    console.log(memeObject);
-    fetch("/default-memes?", {
+    let queryString=serialize(memeObject)
+    console.log(queryString);
+    fetch(`https://api.imgflip.com/caption_image?${queryString}`, {
       method: "POST",
-      headers:{
-      "Content-Type": "application/json",},
-      body: JSON.stringify(memeObject)
     }).then((response) => {
-      console.log(response.data);
-    });
+      return response.json();
+    }).then(resp=>{console.log(resp)})
   };
   useEffect(() => {
     fetch("https://api.imgflip.com/get_memes")
@@ -78,8 +87,8 @@ function MemeBuilder() {
       setCaptions(Array(meme[memeIndex].box_count).fill(""));
     }
   }, [memeIndex, meme]);
-  const handleMemeClick = (file) => {
-    setDefaultImage(file);
+  const handleMemeClick = (id) => {
+    setDefaultImage(id);
     if (!showForm) {
       setShowForm(true);
     }
