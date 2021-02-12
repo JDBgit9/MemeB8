@@ -16,6 +16,7 @@ function Memebate() {
   const [data, setData] = useState({});
   const user = useAuth0();
   const [memeBuilderState, setMemeBuilderState] = useState(false);
+  const [memebateList, setMemebateList]=useState([])
 
   useEffect(() => {
     let ignore = false;
@@ -37,6 +38,10 @@ function Memebate() {
       ignore = true;
     };
   }, [id]);
+  const getMemebate=async()=>{
+    const list=await axios.get(`/memebaters/${id}`);
+    console.log(list)
+  }
   const handleLike = (id, likes, email) => {
     console.log(id);
     try {

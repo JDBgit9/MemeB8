@@ -59,10 +59,10 @@ app.post("/media/dislikes/add", async(request, response)=> {
 })
 app.post("login")
 
-app.get("/memebater", async (request, response) => {
+app.get("/memebaters/:id", async (request, response) => {
   console.log("MEMEBATER IS BEING REQUESTED");
   try {
-    let result = await Memebater.find().exec();
+    let result=await Memebater.findMany({"media_id":ObjectId(request.params.id)}).exec();
     console.log("MEMEBATER FINISHED SUCCESS\n");
     console.log(result);
     response.send(result);
@@ -72,7 +72,7 @@ app.get("/memebater", async (request, response) => {
   }
 });
 
-app.post("/memebater", async (request, response) => {
+app.post("/memebaters", async (request, response) => {
   const memebater = new Memebater(request.body);
 
   memebater.save((error) => {
@@ -84,34 +84,6 @@ app.post("/memebater", async (request, response) => {
     }
   });
 });
-app.get("/default-memes", async(request, response)=>{
-  try {
-  fetch("https://api.imgflip.com/get_memes", {headers:{"Access-Control-Allow-Origin":"*",cors:"no-cors"}})
-  .then(response=>{return response.json()})
-  .then((res) => {
-    const _meme = res;
-    console.log(res)
-    response.status(200).send(JSON.stringify(res))
-  }).catch(error=>{
-    console.log(error)})
-  } catch(error){console.log(error)}
-})
-app.post("/default-memes", jsonParser, async(request, response)=>{
-  const api="384be08c76d654f4105db56ec7dd11"
-  console.log(request.body)
-  try {
-  fetch("http://memebuild.com/api/1.0/generateMeme", {
-    method: "POST",
-    headers:{"API-KEY":api, 
-    "Access-Control-Allow-Origin":"*",
-    cors:"no-cors"
-    },
-    body: JSON.stringify(request.body)
-  }).then(resp=>{return resp.json()}).then(res=>{response.send(res)
-  })
-}catch(error){console.log(error)}
-})
-
 // Serve static assets in production
 if (process.env.NODE_ENV === 'production') {
   // Set static folder
