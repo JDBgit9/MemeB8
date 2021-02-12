@@ -121,21 +121,6 @@ function Memebate() {
           </div>
         </div>
         <div className="synopsis">{data.synopsis}
-        {/* <Typography variant="body1" color="textSecondary">
-                {synopsis.length > 150
-                  ? `${synopsis.substring(0, 150)}...`
-                  : synopsis}
-                {synopsis.length > 150 ? (
-                  <span
-                    className="readMore"
-                    onClick={() => this.handleModalState(true)}
-                  >
-                    Read More
-                  </span>
-                ) : (
-                  ""
-                )}
-              </Typography> */}
         </div>
       </div>
       {!memeBuilderState && (
