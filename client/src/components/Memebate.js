@@ -8,6 +8,7 @@ import "./Memebate.css";
 import Typography from "@material-ui/core/Typography";
 import MemeBuilder from "./MemeBuilder";
 import { set } from "mongoose";
+import Mbreactions from "./Mbreactions";
 
 function Memebate() {
   let { id } = useParams();
@@ -150,7 +151,7 @@ function Memebate() {
             memebateList?.map((memebate, index)=>{
               return(
                 <div className="memebatelist_item">
-                  <img src={memebate.meme} alt="memebate" />
+                  <Mbreactions data={memebate}/>
                   </div>
               )
             })
