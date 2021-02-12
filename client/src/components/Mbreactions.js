@@ -5,20 +5,23 @@ import SentimentVerySatisfiedIcon from '@material-ui/icons/SentimentVerySatisfie
 
 function Mbreactions({data}) {
     const [memeData, setMemeData]=useState(data)
+    const handleReaction=(category)=>{
+        let url=`/memebaters/${category}/add/${memeData.id}`
+    }
     return (
         <div className="Mbreactions">
             <img src={memeData.meme} alt="memeData"/>
             <div className="Mbreactions_btns">
                 <div className="reactions">
-                    <ThumbUpIcon/>
+                    <ThumbUpIcon onClick={()=>handleReaction("likes")}/>
                     {memeData.likes}
                 </div>
                 <div className="reactions">
-                    <ThumbDownAltIcon />
+                    <ThumbDownAltIcon onClick={()=>handleReaction("dislikes")} />
                     {memeData.dislikes}
                 </div>
                 <div className="reactions">
-                    <SentimentVerySatisfiedIcon/>
+                    <SentimentVerySatisfiedIcon onClick={()=>handleReaction("laughs")}/>
                     {memeData.laughs}
                 </div>
             </div>
