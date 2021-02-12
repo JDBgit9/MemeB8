@@ -144,8 +144,19 @@ function Memebate() {
           Memebate This
         </button>
       )}
-
       {memeBuilderState && <MemeBuilder mediaId={id} />}
+        <div className="memebatelist">
+          {
+            memebateList?.map((memebate, index)=>{
+              return(
+                <div className="memebatelist_item">
+                  <img src={memebate.meme} alt="memebate" />
+                  </div>
+              )
+            })
+            
+          }
+        </div>
     </div>
   );
 }
