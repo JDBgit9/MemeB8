@@ -2,11 +2,22 @@ import React, {useState} from 'react'
 import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import ThumbDownAltIcon from "@material-ui/icons/ThumbDownAlt";
 import SentimentVerySatisfiedIcon from '@material-ui/icons/SentimentVerySatisfied';
+import axios from 'axios';
 
 function Mbreactions({data}) {
     const [memeData, setMemeData]=useState(data)
     const handleReaction=(category)=>{
-        let url=`/memebaters/${category}/add/${memeData.id}`
+        let url=`/memebaters/${category}/add`
+        console.log(memeData)
+        try {
+            axios
+              .post(url, { id: memeData._id, count: memeData[category] + 1})
+              .then((response) => {
+                console.log(response)
+              });
+          } catch (error) {
+            console.log(error);
+          }
     }
     return (
         <div className="Mbreactions">

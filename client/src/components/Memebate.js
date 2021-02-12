@@ -5,9 +5,7 @@ import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import ThumbDownAltIcon from "@material-ui/icons/ThumbDownAlt";
 import { useAuth0 } from "@auth0/auth0-react";
 import "./Memebate.css";
-import Typography from "@material-ui/core/Typography";
 import MemeBuilder from "./MemeBuilder";
-import { set } from "mongoose";
 import Mbreactions from "./Mbreactions";
 
 function Memebate() {
