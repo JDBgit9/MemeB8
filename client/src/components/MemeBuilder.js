@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import "./Memebuilder.css";
 
-function MemeBuilder() {
+
+function MemeBuilder({mediaId}) {
   const [meme, setMeme] = useState([]);
   const [defaultMemes, setDefaultMemes] = useState([]);
   const [memeIndex, setMemeIndex] = useState(0);
@@ -41,14 +42,14 @@ function MemeBuilder() {
       array[j] = temp;
     }
   };
-  const serialize = (obj)=> {
+  const serialize = (obj) => {
     var str = [];
     for (var p in obj)
       if (obj.hasOwnProperty(p)) {
         str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
       }
     return str.join("&");
-  }
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
     let memeObject = {
@@ -57,15 +58,33 @@ function MemeBuilder() {
       password: "J.JfsG-?YLHx8C@",
       text0: memeTopText,
       text1: memeBottomText,
-   
     };
-    let queryString=serialize(memeObject)
+    let queryString = serialize(memeObject);
     console.log(queryString);
     fetch(`https://api.imgflip.com/caption_image?${queryString}`, {
       method: "POST",
-    }).then((response) => {
-      return response.json();
-    }).then(resp=>{console.log(resp)})
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((resp) => {
+        console.log(resp);
+        fetch("/memebater", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            likes: 0, 
+            dislikes: 0,
+            laughs: 0,
+            meme: resp.data.url,
+            media_id: mediaId,
+          })
+        }).then(response=>{
+          console.log(response)
+        })
+      });
   };
   useEffect(() => {
     fetch("https://api.imgflip.com/get_memes")
@@ -124,7 +143,7 @@ function MemeBuilder() {
           <h2>Step 2: Enter Text</h2>
           <input
             type="text"
-         value={memeTopText}
+            value={memeTopText}
             placeholder="enter top meme text"
             onChange={(e) => setMemeTopText(e.target.value)}
           />

@@ -134,7 +134,7 @@ function Memebate() {
         </button>
       )}
 
-      {memeBuilderState && <MemeBuilder />}
+      {memeBuilderState && <MemeBuilder mediaId={id} />}
     </div>
   );
 }
