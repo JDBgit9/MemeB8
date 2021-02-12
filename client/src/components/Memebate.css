@@ -1,5 +1,6 @@
 .memebate {
     margin-top: 20px;
+    background-color: rgb(235, 214, 248);
 }
 .subject {
 margin-top: 20px;
@@ -26,6 +27,7 @@ background-color: skyblue;
     font-size: 15px;
     width: 80px;
     height: 30px;
+    
 }
 .tag-for {
     padding: 0.5em 1em space-between;
@@ -37,6 +39,8 @@ background-color: skyblue;
     font-size: 15px;
     width: 80px;
     height: 25px;
+   
+    
 }
 .synopsis {
     display: flex;

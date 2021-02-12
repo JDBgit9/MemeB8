@@ -5,10 +5,13 @@
     padding: 0.5em 3em;
     text-align: center;
     border-radius: 0px;
-    background-color: rgb(72, 144, 216);
+    background-color: rgb(2, 14, 26);
     color: white;
     font-size: 18px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
+}
+.reactions {
+    color: rgb(242, 241, 245);
 }
