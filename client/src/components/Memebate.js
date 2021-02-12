@@ -38,9 +38,15 @@ function Memebate() {
       ignore = true;
     };
   }, [id]);
+  useEffect(()=>{
+    getMemebate()
+  },[])
   const getMemebate=async()=>{
     const list=await axios.get(`/memebaters/${id}`);
     console.log(list)
+    if(list){
+      setMemebateList(list.data)
+    }
   }
   const handleLike = (id, likes, email) => {
     console.log(id);

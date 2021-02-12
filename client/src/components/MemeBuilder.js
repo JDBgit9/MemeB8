@@ -69,7 +69,7 @@ function MemeBuilder({mediaId}) {
       })
       .then((resp) => {
         console.log(resp);
-        fetch("/memebater", {
+        fetch("/memebaters", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
