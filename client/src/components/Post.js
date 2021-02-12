@@ -3,6 +3,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import axios from "axios";
 import { makeStyles } from "@material-ui/core/styles";
 import User from "./User";
+import "./Post.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -80,6 +81,7 @@ const Post = () => {
   };
 
   return (
+    <div className="post">
     <div className={classes.root}>
       <h3>Begin Debate</h3>
       <select
@@ -173,6 +175,7 @@ const Post = () => {
         onChange={(e) => setSource3(e.target.value)}
       />
       <button onClick={handleSubmit}>Submit</button>
+    </div>
     </div>
   );
 };

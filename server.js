@@ -1,37 +1,26 @@
 const express = require("express");
-const connectDB = require('./config/db')
+const connectDB = require("./config/db");
 const cors = require("cors");
-const config = require('config');
-
+const config = require("config");
+const bodyParser = require("body-parser");
 const Media = require("./models/media");
 const Memebater = require("./models/memebater");
 const { response, request } = require("express");
-const ObjectId =require("mongodb").ObjectId;
+const ObjectId = require("mongodb").ObjectId;
+const fetch = require("node-fetch");
+
 
 const app = express();
 
-connectDB()
+connectDB();
 
 app.use(cors({ origin: true }));
-app.use(express.json());
-
-// // Define routes
-// router.use("/media", './routes/api/media');
-// router.use("/user", './routes/api/user');
-// router.use("/memebaters", './routes/api/memebater');
+app.use(bodyParser.json());
+let jsonParser = bodyParser.json();
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get("/media", async (request, response) => {
   console.log("MEDIA IS BEING REQUESTED");
-  if (request.body.id){
-    try{
-      let result=await Media.findOne({"_id":ObjectId(request.body.id)}).exec();
-      response.send(result)
-    } catch(error)
-    {console.error("MEDIA FINISHED ERROR: ", error);
-    response.status(500).send(error);
-  }
-  }
-  else{ 
   try {
     let result = await Media.find().exec();
     console.log("MEDIA FINISHED SUCCESS\n");
@@ -41,18 +30,18 @@ app.get("/media", async (request, response) => {
     console.error("MEDIA FINISHED ERROR: ", error);
     response.status(500).send(error);
   }
-}
 });
-app.get("/media/:id*", async(request, response)=>{
- 
-    try{
-      let result=await Media.findOne({"_id":ObjectId(request.params["id"])}).exec();
-      response.send(result)
-    } catch(error)
-    {console.error("MEDIA FINISHED ERROR: ", error);
+app.get("/media/:id", async (request, response) => {
+  try {
+    let result = await Media.findOne({
+      _id: ObjectId(request.params.id),
+    }).exec();
+    response.send(result);
+  } catch (error) {
+    console.error("MEDIA FINISHED ERROR: ", error);
     response.status(500).send(error);
   }
-})
+});
 app.post("/media", async (request, response) => {
   const media = new Media(request.body);
 
@@ -65,34 +54,45 @@ app.post("/media", async (request, response) => {
     }
   });
 });
-app.post("/media/likes/add", async(request, response)=> {
-  Media.update({_id:ObjectId(request.body.id)}, {$set:{likes: request.body.like}}).then(resp=>response.status(200).send(request.body))
-})
-app.post("/media/dislikes/add", async(request, response)=> {
-  Media.update({_id:ObjectId(request.body.id)}, {$set:{dislikes: request.body.like}}).then(resp=>response.status(200).send(request.body))
-})
-app.post("login")
+app.post("/media/likes/add", async (request, response) => {
+  Media.updateOne(
+    { _id: ObjectId(request.body.id) },
+    { $set: { likes: request.body.like } }
+  ).then((resp) => response.status(200).send(request.body));
+});
+app.post("/media/dislikes/add", async (request, response) => {
+  Media.updateOne(
+    { _id: ObjectId(request.body.id) },
+    { $set: { dislikes: request.body.like } }
+  ).then((resp) => response.status(200).send(request.body));
+});
+app.post("/memebaters/dislikes/add", async (request, response) => {
+  Memebater.updateOne(
+    { _id: ObjectId(request.body.id) },
+    { $set: { dislikes: request.body.count } }
+  ).then((resp) => response.status(200).send(request.body));
+});
+app.post("/memebaters/likes/add", async (request, response) => {
+  console.log(request.body.id)
+  Memebater.updateOne(
+    { _id: ObjectId(request.body.id) },
+    { $set: { likes: request.body.count} }
+  ).then((resp) => response.status(200).send(request.body));
+});
+app.post("/memebaters/laughs/add", async (request, response) => {
+  Memebater.updateOne(
+    { _id: ObjectId(request.body.id) },
+    { $set: { laughs: request.body.count } }
+  ).then((resp) => response.status(200).send(request.body));
+});
+app.post("login");
 
-// app.get("/", async function (req, res) {
-//   // try {
-//   //   await client.connect();
-//   //   await listDatabases(client);
-//   // } catch (e) {
-//   //   console.error(e);
-//   // }
-// });
-
-// async function listDatabases(client) {
-//   databasesList = await client.db().admin().listDatabases();
-
-//   console.log("Databases:");
-//   databasesList.databases.forEach((db) => console.log(` - ${db.name}`));
-// }
-
-app.get("/memebater", async (request, response) => {
+app.get("/memebaters/:id", async (request, response) => {
   console.log("MEMEBATER IS BEING REQUESTED");
   try {
-    let result = await Memebater.find().exec();
+    let result = await Memebater.find({
+      media_id: ObjectId(request.params.id),
+    }).exec();
     console.log("MEMEBATER FINISHED SUCCESS\n");
     console.log(result);
     response.send(result);
@@ -102,7 +102,7 @@ app.get("/memebater", async (request, response) => {
   }
 });
 
-app.post("/memebater", async (request, response) => {
+app.post("/memebaters", async (request, response) => {
   const memebater = new Memebater(request.body);
 
   memebater.save((error) => {
@@ -114,15 +114,14 @@ app.post("/memebater", async (request, response) => {
     }
   });
 });
-
 // Serve static assets in production
-if (process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === "production") {
   // Set static folder
-  app.use(express.static('client/build'))
+  app.use(express.static("client/build"));
 
-  app.get('*', (req, res) => {
-      res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
-  })
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+  });
 }
 
 const PORT = process.env.PORT || 3000;

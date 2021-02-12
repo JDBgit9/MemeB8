@@ -109,7 +109,7 @@ class Media extends Component {
                 <div className="detail">{format}</div>
               </div>
             </div>
-            <div>
+            <div className="media_media">
               <iframe
                 width="385"
                 height="315"

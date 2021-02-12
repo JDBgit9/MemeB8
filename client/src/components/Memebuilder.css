@@ -1,0 +1,12 @@
+.imageselector {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    overflow-x: scroll;
+}
+.imageselector img {
+    object-fit: contain;
+    max-height: 100px;
+    margin: 0 10px;
+ 
+}

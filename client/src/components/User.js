@@ -72,7 +72,7 @@ const User = () => {
   // credentials: { handle, createdAt, imageUrl, bio, website, location },
   // loading
 
-  let profileMarkup = !isLoading ? (
+  let userMarkup = !isLoading ? (
     isAuthenticated ? (
       <Paper className={classes.paper}>
         <div className={classes.profile}>
@@ -132,7 +132,7 @@ const User = () => {
     <p>Loading...</p>
   );
 
-  return profileMarkup;
+  return userMarkup;
 };
 
 // const mapStateToProps = (state) => ({
