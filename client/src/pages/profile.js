@@ -3,6 +3,16 @@ import Media from "../components/Media";
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import "./profile.css";
+import dayjs from "dayjs";
+
+import Typography from "@material-ui/core/Typography";
+import Paper from "@material-ui/core/Paper";
+import CalendarToday from "@material-ui/icons/CalendarToday";
+import Button from "@material-ui/core/Button";
+import MuiLink from "@material-ui/core/Link";
+
+
+
 
 export class profile extends Component {
     render() {
@@ -10,13 +20,14 @@ export class profile extends Component {
             <>
             <div>
                <div>
-                  <div style={{
+                   
+                  {/* <div style={{
                    display: "left",
                    justifyContent:"space-around",
                    margin:"18px 0px"
                }}>
                     <img style={{width: "160px", borderRadius:"80px", marginTop: "60px"}}src="https://images.unsplash.com/photo-1558216144-fef86b75da36?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTEzfHxwZXJzb258ZW58MHwyfDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60"/>
-                   </div>
+                   </div> */}
                   <div style={{
                       marginTop: "50px"
                   }}>
@@ -26,7 +37,7 @@ export class profile extends Component {
                           alignItems: "center", 
                           marginBottom: "200px"
                           }}>
-                          <h2>John Doe</h2>
+                          {/* <h2>John Doe</h2> */}
                  <Card className="card">
                         <CardContent  className="stats">
                           <div style={{display: "left", justifyContent:"space-between"}}>

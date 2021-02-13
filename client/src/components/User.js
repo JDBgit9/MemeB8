@@ -86,27 +86,13 @@ const User = () => {
           <div className="profile-details">
             <MuiLink
               component={Link}
-              to={`users/${user.nickname}`}
+              to={`profile`}
               color="primary"
               variant="h5"
             >
               @{user.nickname}
             </MuiLink>
             <hr />
-            {/* {bio && <Typography variant="body2">{bio}</Typography>}
-            <hr /> */}
-            {/* {location            >
-                  <LocationOn color="primary" /> <span>{location}</span>
-                  <hr           >
-              )} */}
-            {/* {website            >
-                  <LinkIcon color="primary" />
-                  <a href={website} target="_blank" rel="noopener noreferrer">
-                    {" "}
-                    {website}
-                  </a>
-                  <hr           >
-              )} */}
             <CalendarToday color="primary" />{" "}
             <span>Joined {dayjs(user.updated_at).format("MMM YYYY")}</span>
           </div>
