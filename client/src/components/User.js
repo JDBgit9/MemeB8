@@ -121,13 +121,4 @@ const User = () => {
   return userMarkup;
 };
 
-// const mapStateToProps = (state) => ({
-//   user: state.user,
-// });
-
-// Profile.propTypes = {
-//   user: PropTypes.object.isRequired,
-//   classes: PropTypes.object.isRequired,
-// };
-
 export default User;

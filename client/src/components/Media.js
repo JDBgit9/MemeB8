@@ -100,7 +100,7 @@ class Media extends Component {
               to={"/profile"}
               color="primary"
             >
-              Username Placeholder
+             username placeholder
             </Typography>
             <div className="media_title">
               <Typography variant="h6">{title}</Typography>
