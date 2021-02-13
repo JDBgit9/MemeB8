@@ -97,7 +97,7 @@ class Media extends Component {
             <Typography
               variant="body2"
               component={Link}
-              to={"/users/userHandle"}
+              to={"/profile"}
               color="primary"
             >
               Username Placeholder
