@@ -60,7 +60,7 @@
     color: #333333;
 }
 .reaction:hover {
-    color: green;
+    color: tomato;
 }
 .reaction {
     color: cornflowerblue;
@@ -69,7 +69,7 @@
     align-items: center;
 }
 .reaction:hover {
-color: green;
+color: tomato;
 }
 .media_synopsis {
     display: flex;
