@@ -5,7 +5,7 @@
     padding: 0.5em 3em;
     text-align: center;
     border-radius: 0px;
-    background-color: rgb(2, 14, 26);
+    background-color: rgb(85, 154, 224);
     color: white;
     font-size: 18px;
     display: flex;
@@ -14,4 +14,8 @@
 }
 .reactions {
     color: rgb(242, 241, 245);
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
 }
