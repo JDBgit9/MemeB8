@@ -9,11 +9,12 @@ import Typography from "@material-ui/core/Typography";
 import Paper from "@material-ui/core/Paper";
 import CalendarToday from "@material-ui/icons/CalendarToday";
 import Button from "@material-ui/core/Button";
+import { Link } from "react-router-dom";
 
 export class profile extends Component {
     render() {
         return (
-            <>
+            <div className="profile">
             <div>
                <div>
                   <div style={{
@@ -26,13 +27,21 @@ export class profile extends Component {
                   <div style={{
                       marginTop: "50px"
                   }}>
+                       <Typography
+              variant="body2"
+              component={Link}
+              to={"/"}
+              color="primary"
+            >
+             username placeholder
+            </Typography>
                       <div style={{
                           display:"right",
                           justifyContent:"left",
                           alignItems: "center", 
                           marginBottom: "200px"
                           }}>
-                          <h2>John Doe</h2>
+                 
                  <Card className="card">
                         <CardContent  className="stats">
                           <div style={{display: "left", justifyContent:"space-between"}}>
@@ -67,7 +76,7 @@ export class profile extends Component {
                <div className="media" style={{display:"center"}}>
                </div>
             </div>
-            </>
+            </div>
         )
     }
 }

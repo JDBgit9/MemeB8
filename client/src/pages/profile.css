@@ -1,11 +1,16 @@
+.profile {
+    background-image: url(../images/tribunepodium.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .card {
     width: 250px;
   
 }
-.memebater_stats {
-    
-}
 
-.stats  {
-    background-color:rgb(167, 208, 236);
+
+.stats {
+   background-color: transparent;
+   color: #000000;
 }

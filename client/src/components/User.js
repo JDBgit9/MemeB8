@@ -17,6 +17,7 @@ import Paper from "@material-ui/core/Paper";
 import LocationOn from "@material-ui/icons/LocationOn";
 import LinkIcon from "@material-ui/icons/Link";
 import CalendarToday from "@material-ui/icons/CalendarToday";
+import "./UserImage";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -78,6 +79,7 @@ const User = () => {
         <div className={classes.profile}>
           <div className="image-wrapper">
             <div className="profile-image">
+            
               <img src={user.picture} alt="profile" />
             </div>
           </div>
