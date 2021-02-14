@@ -97,10 +97,10 @@ class Media extends Component {
             <Typography
               variant="body2"
               component={Link}
-              to={"/users/userHandle"}
+              to={"/profile"}
               color="primary"
             >
-              Username Placeholder
+             username placeholder
             </Typography>
             <div className="media_title">
               <Typography variant="h6">{title}</Typography>

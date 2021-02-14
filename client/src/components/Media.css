@@ -2,14 +2,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(216, 195, 226);
+    background-color: rgb(167, 208, 236);
     
 }
 .media .replyBtn .btn {
     padding: 0.5em 3em;
     text-align: center;
     border-radius: 999px;
-    background-color: dodgerblue;
+    background-color: rgb(9, 56, 102);
     color: white;
     font-size: 18px;
 }
@@ -48,7 +48,7 @@
 
 }
 .reaction {
-    color: cornflowerblue;
+    color:rgb(9, 56, 102);
     margin-left: 10px;
     display: flex;
     align-items: center;
@@ -60,16 +60,16 @@
     color: #333333;
 }
 .reaction:hover {
-    color: green;
+    color: tomato;
 }
 .reaction {
-    color: cornflowerblue;
+    color: rgb(9, 56, 102);
     position: relative;
     margin-top: auto;
     align-items: center;
 }
 .reaction:hover {
-color: green;
+color: tomato;
 }
 .media_synopsis {
     display: flex;

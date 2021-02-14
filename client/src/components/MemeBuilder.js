@@ -114,19 +114,7 @@ function MemeBuilder({mediaId}) {
   };
   return defaultMemes.length > 0 ? (
     <div className="container">
-      {/* <button onClick={generateMeme} className="generate">
-        Generate
-      </button>
-      <button
-        onClick={() => setMemeIndex(memeIndex + 1)}
-        className="skip"
-      >
-        Skip
-      </button>
-      {captions.map((c, index) => (
-        <input onChange={(e) => updateCaption(e, index)} key={index} />
-      ))}
-      <img alt="meme" src={meme[memeIndex].url} /> */}
+     
       <div className="imageselector">
         {defaultMemes?.map((dmeme, index) => {
           return (

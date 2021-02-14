@@ -17,6 +17,7 @@ import Paper from "@material-ui/core/Paper";
 import LocationOn from "@material-ui/icons/LocationOn";
 import LinkIcon from "@material-ui/icons/Link";
 import CalendarToday from "@material-ui/icons/CalendarToday";
+import "./UserImage";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -78,6 +79,7 @@ const User = () => {
         <div className={classes.profile}>
           <div className="image-wrapper">
             <div className="profile-image">
+            
               <img src={user.picture} alt="profile" />
             </div>
           </div>
@@ -86,27 +88,13 @@ const User = () => {
           <div className="profile-details">
             <MuiLink
               component={Link}
-              to={`users/${user.nickname}`}
+              to={`profile`}
               color="primary"
               variant="h5"
             >
               @{user.nickname}
             </MuiLink>
             <hr />
-            {/* {bio && <Typography variant="body2">{bio}</Typography>}
-            <hr /> */}
-            {/* {location            >
-                  <LocationOn color="primary" /> <span>{location}</span>
-                  <hr           >
-              )} */}
-            {/* {website            >
-                  <LinkIcon color="primary" />
-                  <a href={website} target="_blank" rel="noopener noreferrer">
-                    {" "}
-                    {website}
-                  </a>
-                  <hr           >
-              )} */}
             <CalendarToday color="primary" />{" "}
             <span>Joined {dayjs(user.updated_at).format("MMM YYYY")}</span>
           </div>
@@ -134,14 +122,5 @@ const User = () => {
 
   return userMarkup;
 };
-
-// const mapStateToProps = (state) => ({
-//   user: state.user,
-// });
-
-// Profile.propTypes = {
-//   user: PropTypes.object.isRequired,
-//   classes: PropTypes.object.isRequired,
-// };
 
 export default User;

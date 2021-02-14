@@ -83,7 +83,7 @@ const Post = () => {
   return (
     <div className="post">
     <div className={classes.root}>
-      <h3>Begin Debate</h3>
+      <h3>Start Debate</h3>
       <select
         value={category}
         className={classes.field}
