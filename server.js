@@ -9,7 +9,7 @@ const { response, request } = require("express");
 const ObjectId = require("mongodb").ObjectId;
 const fetch = require("node-fetch");
 const User = require("./models/user");
-const { default: Challenge } = require("./client/src/components/Challenge");
+const Challenge = require("./models/challenge")
 
 
 const app = express();
