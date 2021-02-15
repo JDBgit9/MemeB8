@@ -59,6 +59,5 @@ color: #ffffff;
 .memebate_container, .challenge_container {
    width: 50%;
     box-sizing: border-box;
-    padding: 15px;
-
+    padding: 15px; 
 }

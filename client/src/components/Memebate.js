@@ -9,6 +9,7 @@ import MemeBuilder from "./MemeBuilder";
 import Mbreactions from "./Mbreactions";
 import Challenge from "./Challenge";
 
+
 function Memebate() {
   let { id } = useParams();
   const [loading, setLoading] = useState(false);
