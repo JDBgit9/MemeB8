@@ -1,18 +1,27 @@
 import React, { useState } from "react";
+import { useAuth0 } from "@auth0/auth0-react";
+import axios from "axios";
 
 
-function ChallengeForm() {
+function ChallengeForm({media_id}) {
   const [showForm, setShowForm] = useState(false);
   const [challenge, setChallenge] = useState("");
   const [sources, setSources] = useState("");
   const [tags, setTags] = useState("");
-  const handleSubmit = (e)=>{
+  const user = useAuth0();
+  const handleSubmit = async(e)=>{
+    let userInfo=await axios.get(`/users/${user.user.email}`)
     let object = {
       challenge: challenge,
       likes: 0,
       dislikes: 0,
-      sources: sources.split(",").map(source=>source)
+      sources: sources.split(",").map(source=>source),
+      tags: tags.split(",").map(tag=>tag),
+      media_id: media_id,
+      user: userInfo._id,
     }
+    console.log(user)
+    console.log(object)
   }
 
 

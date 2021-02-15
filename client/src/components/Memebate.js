@@ -147,7 +147,7 @@ function Memebate() {
           </div>
         </div>
         <div className="challenge_container">
-          <Challenge/>
+          <Challenge media_id={id}/>
         </div>
         </div>
     </div>

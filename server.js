@@ -19,6 +19,16 @@ app.use(bodyParser.json());
 let jsonParser = bodyParser.json();
 app.use(bodyParser.urlencoded({ extended: false }));
 
+app.get("/users/:email", async(request, response)=>{
+  try {
+    let result=User.findOne({email:request.params.email}).exec();
+    response.send(result)
+  }catch(error){
+    console.log(error)
+    response.status(500).send(error)
+  }
+})
+
 app.get("/media", async (request, response) => {
   console.log("MEDIA IS BEING REQUESTED");
   try {
