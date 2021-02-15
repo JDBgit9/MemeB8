@@ -8,20 +8,27 @@ import "./Mbreactions.css";
 
 function Mbreactions({ data }) {
   const [memeData, setMemeData] = useState(data);
+  const [loading, setLoading] = useState(false)
   const handleReaction = (category) => {
     let url = `/memebaters/${category}/add`;
     console.log(memeData);
+    
     try {
       axios
         .post(url, { id: memeData._id, count: memeData[category] + 1 })
         .then((response) => {
           console.log(response);
+          setLoading(true)
+          let tempData=memeData;
+          tempData[category]=response.data.count
+          setMemeData(tempData)
+          setLoading(false)
         });
     } catch (error) {
       console.log(error);
     }
   };
-  return (
+  return !loading && (
     <div className="Mbreactions">
       <Card className="meme_card">
         <img src={memeData.meme} alt="memeData" />
