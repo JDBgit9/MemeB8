@@ -11,26 +11,15 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     // width: "50%",
     padding: "10px",
+    
+
+
   },
 
   field: {
     margin: "5px",
     width: "100%",
   },
-
-  /* .profile_info {
-        height: 500px;
-        width: 300px;
-        background: white;
-        color: black;
-        border: 2px solid black;
-        border-radius: 30px;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        padding: 10px;
-        margin: auto;
-    } */
 }));
 
 const Post = () => {
