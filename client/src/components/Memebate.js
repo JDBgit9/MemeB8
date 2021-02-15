@@ -137,7 +137,7 @@ function Memebate() {
           {
             memebateList?.map((memebate, index)=>{
               return(
-                <div className="memebatelist_item">
+                <div className="memebatelist_item" key={index}>
                   <Mbreactions data={memebate}/>
                   </div>
               )
