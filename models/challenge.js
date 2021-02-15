@@ -9,7 +9,10 @@ const challengeSchema = new Schema({
   sources: { type: Array, required: true },
   tags: { type: Array, required: false },
   media_id: { type: ObjectId, required: true },
-  user: { type: ObjectId, required: true },
+  user: {
+      id: {type: ObjectId, require: true},
+      userName: {type:String, required: true},
+  },
 });
 
 const Challenge = mongoose.model("challenge", challengeSchema);

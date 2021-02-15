@@ -18,10 +18,14 @@ function ChallengeForm({media_id}) {
       sources: sources.split(",").map(source=>source),
       tags: tags.split(",").map(tag=>tag),
       media_id: media_id,
-      user: userInfo._id,
+      user: {
+        id: userInfo.data[0]._id,
+        userName: userInfo.data[0].username 
+      }
     }
     console.log(user)
     console.log(object)
+    console.log(userInfo)
   }
 
 

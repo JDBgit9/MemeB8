@@ -8,6 +8,8 @@ const Memebater = require("./models/memebater");
 const { response, request } = require("express");
 const ObjectId = require("mongodb").ObjectId;
 const fetch = require("node-fetch");
+const User = require("./models/user");
+const { default: Challenge } = require("./client/src/components/Challenge");
 
 
 const app = express();
@@ -19,9 +21,19 @@ app.use(bodyParser.json());
 let jsonParser = bodyParser.json();
 app.use(bodyParser.urlencoded({ extended: false }));
 
+app.get("/users/", async(request, response)=>{
+  try {
+    let result= await User.find().exec()
+    response.send(result)
+  }catch(error){
+    console.log(error)
+    response.status(500).send(error)
+  }
+})
+
 app.get("/users/:email", async(request, response)=>{
   try {
-    let result=User.findOne({email:request.params.email}).exec();
+    let result= await User.find({email:request.params.email}).exec();
     response.send(result)
   }catch(error){
     console.log(error)
@@ -124,6 +136,18 @@ app.post("/memebaters", async (request, response) => {
     }
   });
 });
+app.post("/challenge", async(request, response)=>{
+  const challenge=new Challenge(request.body)
+  challenge.save((error)=>{
+    if (error){
+      console.log(error)
+      response.status(500).send(error)
+    } else{
+      console.log("challenge save to database")
+      response.status(200).send(request.body)
+    }
+    })
+})
 // Serve static assets in production
 if (process.env.NODE_ENV === "production") {
   // Set static folder
