@@ -136,6 +136,17 @@ app.post("/memebaters", async (request, response) => {
     }
   });
 });
+app.get("/challenge/:media_id", async(request, response)=>{
+  try {
+    let result = await Challenge.find({media_id:ObjectId(request.params.media_id)}).exec()
+    if (result){
+      response.status(200).send(result)
+    }
+  }catch(error){
+    console.log(error)
+    response.status(500).send(error)
+  }
+})
 app.post("/challenge", async(request, response)=>{
   console.log(request.body)
   const challenge=new Challenge(request.body.data)
