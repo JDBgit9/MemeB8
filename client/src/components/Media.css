@@ -3,6 +3,8 @@
     justify-content: space-between;
     align-items: center;
     background-color: rgb(167, 208, 236);
+    padding-left: 15px;
+    
     
 }
 .media .replyBtn .btn {
