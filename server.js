@@ -137,7 +137,8 @@ app.post("/memebaters", async (request, response) => {
   });
 });
 app.post("/challenge", async(request, response)=>{
-  const challenge=new Challenge(request.body)
+  console.log(request.body)
+  const challenge=new Challenge(request.body.data)
   challenge.save((error)=>{
     if (error){
       console.log(error)

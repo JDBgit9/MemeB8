@@ -26,6 +26,9 @@ function ChallengeForm({media_id}) {
     console.log(user)
     console.log(object)
     console.log(userInfo)
+    let submit = await axios.post("/challenge", {data: object}, 
+    { headers: {"Content-Type": "application/json"},}
+    )
   }
 
 

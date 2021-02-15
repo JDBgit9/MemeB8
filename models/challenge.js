@@ -8,9 +8,9 @@ const challengeSchema = new Schema({
   dislikes: { type: Number, required: false },
   sources: { type: Array, required: true },
   tags: { type: Array, required: false },
-  media_id: { type: ObjectId, required: true },
+  media_id: { type: ObjectId, required: false},
   user: {
-      id: {type: ObjectId, require: true},
+      id: {type: ObjectId, required: true},
       userName: {type:String, required: true},
   },
 });
