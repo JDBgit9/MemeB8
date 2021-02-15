@@ -1,5 +1,11 @@
 .meme_card {
-    width: 60%;
+    width: 100%;
+}
+.meme_card img {
+    max-width: 100%;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
 }
 
 .Mbreactions_btns {

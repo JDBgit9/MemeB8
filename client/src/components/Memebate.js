@@ -7,6 +7,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import "./Memebate.css";
 import MemeBuilder from "./MemeBuilder";
 import Mbreactions from "./Mbreactions";
+import Challenge from "./Challenge";
 
 function Memebate() {
   let { id } = useParams();
@@ -123,6 +124,8 @@ function Memebate() {
         <div className="synopsis">{data.synopsis}
         </div>
       </div>
+      <div className="debate_responses">
+        <div className="memebate_container">
       {!memeBuilderState && (
         <button className="btn" onClick={() => setMemeBuilderState(true)}>
           Memebate This
@@ -140,6 +143,11 @@ function Memebate() {
             })
             
           }
+          </div>
+        </div>
+        <div className="challenge_container">
+          <Challenge/>
+        </div>
         </div>
     </div>
   );
