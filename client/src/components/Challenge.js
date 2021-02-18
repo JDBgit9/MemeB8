@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import ChallengeForm from "./ChallengeForm";
 import axios from "axios";
 import "./Challenge.css";
+import ChallengeReactions from "./ChallengeReactions";
 
 function Challenge({ media_id }) {
   const [data, setData] = useState([]);
@@ -30,7 +31,22 @@ function Challenge({ media_id }) {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               ></iframe>
+              <ChallengeReactions data={item}/>
               <div className="item_username">{item.user.userName}</div>
+              <div className="item_sources">{
+                item.sources?.map((source, sourceIndex)=>{
+                  return (
+                  <a key={sourceIndex}href={source} target="_blank">Source {sourceIndex+1}</a>
+                    )
+                })
+              }</div>
+              <div className="item_tags">{
+                item.tags?.map((tag, tagIndex)=>{
+                  return (
+                  <div key={tagIndex}className="tag">{tag}</div>
+                    )
+                })
+              }</div>
             </div>
           );
         })}
