@@ -9,24 +9,18 @@ export function getIframeUrl(url) {
           return formatUrl(url, "rumble")
       } else if(/vimeo/gi.test(provider)){
           return formatUrl(url,"vimeo")
-      }
+      }else if(/bitchute/gi.test(provider)){
+        return formatUrl(url, "bitchute")
   }
+}
 function formatUrl(url, provider){
 if (provider==="youtube"){
   let id =url.split("=")[1]
   return `https://www.youtube.com/embed/${id}`
-} else if(provider==="rumble"){
+} else if(provider==="rumble" || provider==="bitchute"){
     return url
 }else if (provider==="vimeo"){
     let id =url.replace("https://", "").split("/")[1]
     return `https://player.vimeo.com/video/${id}`
 }
 }
-/*  <iframe
-    class="rumble"
-    width="640"
-    height="360"
-    src="https://rumble.com/embed/vbb9b1/?pub=4"
-    frameborder="0"
-    allowfullscreen
-  ></iframe>;*/
