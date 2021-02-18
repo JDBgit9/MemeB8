@@ -160,6 +160,20 @@ app.post("/challenge", async(request, response)=>{
     }
     })
 })
+app.post("/challenge/likes/add", async (request, response) => {
+  console.log(request.body.id)
+  Challenge.updateOne(
+    { _id: ObjectId(request.body.id) },
+    { $set: { likes: request.body.count} }
+  ).then((resp) => response.status(200).send(request.body));
+});
+app.post("/challenge/dislikes/add", async (request, response) => {
+  console.log(request.body.id)
+  Challenge.updateOne(
+    { _id: ObjectId(request.body.id) },
+    { $set: { dislikes: request.body.count} }
+  ).then((resp) => response.status(200).send(request.body));
+});
 // Serve static assets in production
 if (process.env.NODE_ENV === "production") {
   // Set static folder
