@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ChallengeForm from "./ChallengeForm";
 import axios from "axios";
+import "./Challenge.css";
 
 function Challenge({ media_id }) {
   const [data, setData] = useState([]);

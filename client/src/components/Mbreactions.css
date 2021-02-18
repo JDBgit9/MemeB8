@@ -18,6 +18,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    width: 320px;
 }
 .reactions {
     color: rgb(242, 241, 245);

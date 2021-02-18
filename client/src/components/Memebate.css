@@ -13,8 +13,8 @@ margin-top: 20px;
 margin-top: 10px;
 margin-bottom: 10px;
 padding: 10px;
-width: 140px;
-font-size: 0.9em;
+width: 260px;
+font-size: 1em;
 font-style: normal;
 border-radius: 100px;
 background-color:  rgb(9, 56, 102);
@@ -22,11 +22,12 @@ color: #ffffff;
 }
 
 .tag-catfor {
-    padding: 0.5em 1em space-between;
+    padding: 2em 3em space-between;
     text-align: center;
     background-color: #999999;
     color: #ffffff;
     border-radius: 2px;
+    margin-top: 0.5em;
     margin-bottom: 2.5px;
     margin-left: 1200px;
     font-size: 15px;
