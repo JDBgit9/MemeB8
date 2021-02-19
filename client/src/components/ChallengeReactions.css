@@ -1,14 +1,14 @@
-.meme_card {
+.chmeme_card {
     width: 100%;
 }
-.meme_card img {
+.chmeme_card img {
     max-width: 100%;
     object-fit: contain;
     display: block;
     margin: 0 auto;
 }
 
-.Mbreactions_btns {
+.ChallengeReactions_btns {
     padding: 0.5em 3em;
     text-align: center;
     border-radius: 0px;
@@ -20,13 +20,13 @@
     justify-content: flex-end;
     width: 320px;
 }
-.reactions {
+.chreactions {
     color: rgb(242, 241, 245);
     margin-left: 10px;
     display: flex;
     align-items: center;
     margin-right: 10px;
 }
-.reactions:hover {
+.chreactions:hover {
     color: tomato;
 }

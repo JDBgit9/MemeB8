@@ -28,14 +28,14 @@ function ChallengeReactions({ data }) {
     }
   };
   return !loading && (
-    <div className="Mbreactions">
-      <Card className="meme_card">
-        <div className="Mbreactions_btns">
-          <div className="reactions">
+    <div className="ChallengeReactions">
+      <Card className="chmeme_card">
+        <div className="ChallengeReactions_btns">
+          <div className="chreactions">
             <ThumbUpIcon onClick={() => handleReaction("likes")} />
             {challengeData.likes}
           </div>
-          <div className="reactions">
+          <div className="chreactions">
             <ThumbDownAltIcon onClick={() => handleReaction("dislikes")} />
             {challengeData.dislikes}
           </div>

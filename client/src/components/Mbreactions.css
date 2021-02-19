@@ -1,5 +1,5 @@
 .meme_card {
-    width: 100%;
+    width: 80%;
 }
 .meme_card img {
     max-width: 100%;
@@ -18,7 +18,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    width: 320px;
+    width: 440px;
 }
 .reactions {
     color: rgb(242, 241, 245);
