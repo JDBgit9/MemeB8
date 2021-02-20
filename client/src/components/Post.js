@@ -33,10 +33,12 @@ const Post = () => {
   const [source2, setSource2] = useState("");
   const [source3, setSource3] = useState("");
   const [debate, setDebate] = useState("");
+  const user = useAuth0();
 
   console.log(title);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => { 
+    let userInfo=await axios.get(`/users/${user.user.email}`)
     let request = {
       debate,
       title,
@@ -46,6 +48,10 @@ const Post = () => {
       source1,
       source2,
       source3,
+      user: {
+        id: userInfo.data[0]._id,
+        userName: userInfo.data[0].username
+      }
     };
 
     const res = axios

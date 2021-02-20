@@ -85,6 +85,7 @@ class Media extends Component {
         points,
         wins,
         losses,
+        user,
       },
       index,
       updateReaction,
@@ -100,7 +101,7 @@ class Media extends Component {
               to={"/profile"}
               color="primary"
             >
-             username placeholder
+           {user?.id?user.userName:"NoUser"}
             </Typography>
             <div className="media_title">
               <Typography variant="h6">{title}</Typography>
