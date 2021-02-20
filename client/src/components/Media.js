@@ -156,7 +156,7 @@ class Media extends Component {
                 )}
               </Typography>
             </div>
-            <div className="media_sources">
+            {(source1.length+source2.length+source3.length)>0&&(<div className="media_sources">
               {source1?.length > 0 && (
                 <Typography variant="body1" color="textSecondary">
                   <a href={source1} target="_blank">
@@ -179,7 +179,7 @@ class Media extends Component {
                   </a>
                 </Typography>
               )}
-            </div>
+            </div>)}
           </CardContent>
         </Card>
         <div className="replyBtn">
