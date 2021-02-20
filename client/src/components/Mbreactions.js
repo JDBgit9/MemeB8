@@ -33,6 +33,9 @@ function Mbreactions({ data }) {
       <Card className="meme_card">
         <img src={memeData.meme} alt="memeData" />
         <div className="Mbreactions_btns">
+          <div className="userName">
+           {memeData?.user?.userName} 
+          </div>
           <div className="reactions">
             <ThumbUpIcon onClick={() => handleReaction("likes")} />
             {memeData.likes}

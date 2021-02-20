@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import "./Memebuilder.css";
-
+import { useAuth0 } from "@auth0/auth0-react";
+import axios from "axios";
 
 function MemeBuilder({mediaId}) {
   const [meme, setMeme] = useState([]);
@@ -14,6 +15,7 @@ function MemeBuilder({mediaId}) {
   const [showForm, setShowForm] = useState(false);
   const [memeTopText, setMemeTopText] = useState("");
   const [memeBottomText, setMemeBottomText] = useState("");
+  const user = useAuth0();
 
   const updateCaption = (e, index) => {
     const text = e.target.value || "";
@@ -65,10 +67,14 @@ function MemeBuilder({mediaId}) {
       method: "POST",
     })
       .then((response) => {
+        setShowForm(false)
+        setMemeTopText("")
+        setMemeBottomText("")
         return response.json();
       })
-      .then((resp) => {
+      .then(async(resp) => {
         console.log(resp);
+        let userInfo=await axios.get(`/users/${user.user.email}`)
         fetch("/memebaters", {
           method: "POST",
           headers: {
@@ -80,6 +86,10 @@ function MemeBuilder({mediaId}) {
             laughs: 0,
             meme: resp.data.url,
             media_id: mediaId,
+            user: {
+              id: userInfo.data[0]._id,
+              userName: userInfo.data[0].username
+            }
           })
         }).then(response=>{
           console.log(response)
