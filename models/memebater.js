@@ -9,6 +9,10 @@ dislikes: { type: Number, required: true },
 meme: { type: String, required: true },
 laughs: { type: Number},
 media_id: {type: ObjectId, required: true},
+user: {
+    id: {type: ObjectId, required: true},
+    userName: {type:String, required: true},
+  }
 });
 
 
