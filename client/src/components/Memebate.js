@@ -18,6 +18,13 @@ function Memebate() {
   const user = useAuth0();
   const [memeBuilderState, setMemeBuilderState] = useState(false);
   const [memebateList, setMemebateList]=useState([])
+  const updateList= async (meme)=>{
+    setLoading(true)
+  let list=memebateList
+  list.push(meme)
+  setMemebateList(list)
+    setLoading(false);
+  }
 
   useEffect(() => {
     let ignore = false;
@@ -132,7 +139,7 @@ function Memebate() {
           Memebate This
         </button>
       )}
-      {memeBuilderState && <MemeBuilder mediaId={id} />}
+      {memeBuilderState && <MemeBuilder mediaId={id} updateList={updateList} />}
         <div className="memebatelist">
           {
             memebateList?.map((memebate, index)=>{

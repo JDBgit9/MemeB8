@@ -4,7 +4,7 @@ import "./Memebuilder.css";
 import { useAuth0 } from "@auth0/auth0-react";
 import axios from "axios";
 
-function MemeBuilder({mediaId}) {
+function MemeBuilder({mediaId, updateList}) {
   const [meme, setMeme] = useState([]);
   const [defaultMemes, setDefaultMemes] = useState([]);
   const [memeIndex, setMemeIndex] = useState(0);
@@ -92,7 +92,10 @@ function MemeBuilder({mediaId}) {
             }
           })
         }).then(response=>{
-          console.log(response)
+          return response.json()  
+        }).then (resp=>{
+          console.log(resp)
+            updateList(resp)
         })
       });
   };
