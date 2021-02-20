@@ -117,10 +117,10 @@ const Post = () => {
           Select Format
         </option>
         <option value="Open">Open Debate</option>
-        <option value="Closed">Closed Debate</option>
-        <option value="Moderated">Moderated</option>
-        <option value="Formal">Formal</option>
-        <option value="Live">Live</option>
+        <option disabled value="Closed">Closed Debate</option>
+        <option disabled value="Moderated">Moderated</option>
+        <option disabled value="Formal">Formal</option>
+        <option disabled value="Live">Live</option>
       </select>
       <input
         type="text"
