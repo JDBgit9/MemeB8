@@ -37,6 +37,7 @@
     "joi": "^17.4.0",
     "mongoose": "^5.11.11",
     "node-fetch": "^2.6.1",
+    "react-dropzone": "^12.0.5",
     "react-redux": "^7.2.2",
     "react-router-dom": "^5.2.0",
     "react-scroll": "^1.8.1",
