@@ -94,6 +94,7 @@ const Post = () => {
         <option value="Culture">Culture</option>
         <option value="CryptoCurrency">CryptoCurrency</option>
         <option value="Education">Education</option>
+        <option value="Entertainment">Entertainment</option>
         <option value="Fashion">Fashion</option>
         <option value="Financial">Financial</option>
         <option value="Flat Earth">Flat Earth</option>
@@ -115,11 +116,12 @@ const Post = () => {
         <option value="Police Reform">Police Reform</option>
         <option value="Politics">Politics</option>
         <option value="Polyamory">Polyamory</option>
+        <option value="Psychedelics">Psychedelics</option>
         <option value="Racism">Racism</option>
         <option value="Random">Random</option>
         <option value="Religion">Religion</option>
         <option value="Science">Science</option>
-        <option value="Speed">Speed</option>
+        <option value="Speed Rounds">Speed Rounds</option>
         <option value="Sports">Sports</option>
         <option value="Technology">Technology</option>
         <option value="Trans">Trans</option>
