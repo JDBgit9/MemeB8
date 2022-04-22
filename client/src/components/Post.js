@@ -88,7 +88,7 @@ const Post = () => {
           Select Catergory
         </option>
         <option value="Anime">Anime</option>
-        <option> value="Climate Change"</option>
+        <option value="Climate Change">Climate Change</option>
         <option value="Coding">Coding</option>
         <option value="Cosmetics">Cosmetics</option>
         <option value="Culture">Culture</option>
@@ -96,7 +96,7 @@ const Post = () => {
         <option value="Education">Education</option>
         <option value="Fashion">Fashion</option>
         <option value="Financial">Financial</option>
-        <option> value="Flat Earth Theory"</option>
+        <option value="Flat Earth Theory">Flat Earth Theory</option>
         <option value="Gaming">Gaming</option>
         <option value="Health">Health</option>
         <option value="History">History</option>
