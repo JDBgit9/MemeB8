@@ -56,7 +56,7 @@ function MemeBuilder({mediaId, updateList}) {
     e.preventDefault();
     let memeObject = {
       template_id: defaultImage,
-      username: "jdbwebdev",
+      username: "justdev",
       password: "J.JfsG-?YLHx8C@",
       text0: memeTopText,
       text1: memeBottomText,
