@@ -96,10 +96,11 @@ const Post = () => {
         <option value="Education">Education</option>
         <option value="Fashion">Fashion</option>
         <option value="Financial">Financial</option>
-        <option value="Flat Earth Theory">Flat Earth Theory</option>
+        <option value="Flat Earth">Flat Earth</option>
         <option value="Gaming">Gaming</option>
         <option value="Health">Health</option>
         <option value="History">History</option>
+        <option value="Hollywood">Hollywood</option>
         <option value="Kamakazi">Kamakazi</option>
         <option value="Medicine">Medicine</option>
         <option value="Memes">Memes</option>
@@ -115,6 +116,7 @@ const Post = () => {
         <option value="Sports">Sports</option>
         <option value="Technology">Technology</option>
         <option value="Travel">Travel</option>
+        <option value="UFO's">UFO's</option>
         <option value="Questions">Questions</option>
       </select>
       <select
