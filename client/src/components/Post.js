@@ -109,6 +109,7 @@ const Post = () => {
         <option value="Opinion">Opinion</option>  
         <option value="Physics">Physics</option>
         <option value="Politics">Politics</option>
+        <option value="Racism">Racism</option>
         <option value="Random">Random</option>
         <option value="Religion">Religion</option>
         <option value="Science">Science</option>
@@ -117,6 +118,7 @@ const Post = () => {
         <option value="Technology">Technology</option>
         <option value="Travel">Travel</option>
         <option value="UFO's">UFO's</option>
+        <opttion value="Vaccines">Vaccines</opttion>
         <option value="Questions">Questions</option>
       </select>
       <select
