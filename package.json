@@ -1,7 +1,7 @@
 {
   "name": "memebate",
   "version": "1.0.0",
-  "description": "Platform for an open discussion",
+  "description": "A social media app game that bring the fun back into the discourse online",
   "main": "server.js",
   "engine": {
     "node": "15.x",
