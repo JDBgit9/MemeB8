@@ -88,6 +88,9 @@ const AboutUs = () => {
             <h1 className={classes.pitch}>
               A fun digital debate platform without all the fuss.
             </h1>
+            <p>Hi my name is James and I created this application with truth and fun in mind. It's simple; the more you tell the truth the more you will win. I was around when MySpace was huge and I saw how social media changed the landscape of our society and myself, nt in a good way. My hope is to bring us back together with being who we are truly as opposed to what our supposed ideologies tell us we are. 
+              I have a musical background and have been in a creative mindset and as I transitioned into the tech world I wanted to find a way to maintain my creativity in the technology realm and this application is hopefullly a way to do that.
+            </p>
 
             <Scroll to="details" smooth={true}>
               <IconButton>
