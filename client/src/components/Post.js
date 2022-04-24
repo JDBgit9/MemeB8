@@ -113,6 +113,7 @@ const Post = () => {
         <option value="News">News</option>
         <option value="Opinion">Opinion</option>  
         <option value="Parenting">Parenting</option>
+        <option value="Pharmaceutical">Pharmaceutical</option>
         <option value="Physics">Physics</option>
         <option value="Police Reform">Police Reform</option>
         <option value="Politics">Politics</option>
