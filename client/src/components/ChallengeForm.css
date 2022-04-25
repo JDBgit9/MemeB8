@@ -1,0 +1,13 @@
+.challengeform {
+    padding: 0.5em 3em;
+    text-align: left;
+    border-radius: 40px;
+    background-color: rgb(9, 56, 102);
+    color: white;
+    font-size: 18px;
+    display: block;
+    align-items: center;
+    justify-content: left;
+    margin-bottom: 5px;
+    width: 140px;
+}
