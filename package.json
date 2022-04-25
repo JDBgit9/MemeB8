@@ -47,6 +47,8 @@
     "react-scroll": "^1.8.1",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
-    "superagent": "^7.1.2"
+    "superagent": "^7.1.2",
+    "yarn": "^1.22.18",
+    "yarn-install": "^1.0.0"
   }
 }
