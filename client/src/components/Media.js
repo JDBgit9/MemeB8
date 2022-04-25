@@ -85,6 +85,7 @@ class Media extends Component {
         points,
         wins,
         losses,
+        user,
       },
       index,
       updateReaction,
@@ -100,7 +101,7 @@ class Media extends Component {
               to={"/profile"}
               color="primary"
             >
-             username placeholder
+           {user?.id?user.userName:"NoUser"}
             </Typography>
             <div className="media_title">
               <Typography variant="h6">{title}</Typography>
@@ -156,7 +157,7 @@ class Media extends Component {
                 )}
               </Typography>
             </div>
-            <div className="media_sources">
+            {(source1.length+source2.length+source3.length)>0&&(<div className="media_sources">
               {source1?.length > 0 && (
                 <Typography variant="body1" color="textSecondary">
                   <a href={source1} target="_blank">
@@ -179,7 +180,7 @@ class Media extends Component {
                   </a>
                 </Typography>
               )}
-            </div>
+            </div>)}
           </CardContent>
         </Card>
         <div className="replyBtn">

@@ -11,26 +11,15 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     // width: "50%",
     padding: "10px",
+    
+
+
   },
 
   field: {
     margin: "5px",
     width: "100%",
   },
-
-  /* .profile_info {
-        height: 500px;
-        width: 300px;
-        background: white;
-        color: black;
-        border: 2px solid black;
-        border-radius: 30px;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        padding: 10px;
-        margin: auto;
-    } */
 }));
 
 const Post = () => {
@@ -44,10 +33,12 @@ const Post = () => {
   const [source2, setSource2] = useState("");
   const [source3, setSource3] = useState("");
   const [debate, setDebate] = useState("");
+  const user = useAuth0();
 
   console.log(title);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => { 
+    let userInfo=await axios.get(`/users/${user.user.email}`)
     let request = {
       debate,
       title,
@@ -57,6 +48,10 @@ const Post = () => {
       source1,
       source2,
       source3,
+      user: {
+        id: userInfo.data[0]._id,
+        userName: userInfo.data[0].username
+      }
     };
 
     const res = axios
@@ -83,7 +78,7 @@ const Post = () => {
   return (
     <div className="post">
     <div className={classes.root}>
-      <h3>Start Debate</h3>
+      <h3>Start Topic</h3>
       <select
         value={category}
         className={classes.field}
@@ -93,30 +88,48 @@ const Post = () => {
           Select Catergory
         </option>
         <option value="Anime">Anime</option>
+        <option value="Climate Change">Climate Change</option>
         <option value="Coding">Coding</option>
         <option value="Cosmetics">Cosmetics</option>
         <option value="Culture">Culture</option>
         <option value="CryptoCurrency">CryptoCurrency</option>
         <option value="Education">Education</option>
+        <option value="Entertainment">Entertainment</option>
         <option value="Fashion">Fashion</option>
         <option value="Financial">Financial</option>
+        <option value="Flat Earth">Flat Earth</option>
         <option value="Gaming">Gaming</option>
         <option value="Health">Health</option>
         <option value="History">History</option>
+        <option value="Hollywood">Hollywood</option>
         <option value="Kamakazi">Kamakazi</option>
+        <option value="LGBTQI">LGBTQI</option>
+        <option value="Marijuana">Marijuana</option>
+        <option value="Marriage">Marriage</option>
         <option value="Medicine">Medicine</option>
+        <option value="Memes">Memes</option>
+        <option value="MeToo">MeeToo</option>
         <option value="Music">Music</option>
         <option value="News">News</option>
         <option value="Opinion">Opinion</option>  
+        <option value="Parenting">Parenting</option>
+        <option value="Pharmaceutical">Pharmaceutical</option>
         <option value="Physics">Physics</option>
+        <option value="Police Reform">Police Reform</option>
         <option value="Politics">Politics</option>
+        <option value="Polyamory">Polyamory</option>
+        <option value="Psychedelics">Psychedelics</option>
+        <option value="Racism">Racism</option>
         <option value="Random">Random</option>
         <option value="Religion">Religion</option>
         <option value="Science">Science</option>
-        <option value="Speed">Speed</option>
+        <option value="Speed Rounds">Speed Rounds</option>
         <option value="Sports">Sports</option>
         <option value="Technology">Technology</option>
+        <option value="Trans">Trans</option>
         <option value="Travel">Travel</option>
+        <option value="UFO's">UFO's</option>
+        <opttion value="Vaccines">Vaccines</opttion>
         <option value="Questions">Questions</option>
       </select>
       <select
@@ -128,10 +141,10 @@ const Post = () => {
           Select Format
         </option>
         <option value="Open">Open Debate</option>
-        <option value="Closed">Closed Debate</option>
-        <option value="Moderated">Moderated</option>
-        <option value="Formal">Formal</option>
-        <option value="Live">Live</option>
+        <option disabled value="Closed">Closed Debate</option>
+        <option disabled value="Moderated">Moderated</option>
+        <option disabled value="Formal">Formal</option>
+        <option disabled value="Live">Live</option>
       </select>
       <input
         type="text"

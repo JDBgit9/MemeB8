@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import dayjs from "dayjs";
-
+import "./User.css";
 // Auth0 Hook
 import { useAuth0 } from "@auth0/auth0-react";
 

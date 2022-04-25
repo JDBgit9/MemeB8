@@ -8,6 +8,8 @@ const Memebater = require("./models/memebater");
 const { response, request } = require("express");
 const ObjectId = require("mongodb").ObjectId;
 const fetch = require("node-fetch");
+const User = require("./models/user");
+const Challenge = require("./models/challenge")
 
 
 const app = express();
@@ -18,6 +20,26 @@ app.use(cors({ origin: true }));
 app.use(bodyParser.json());
 let jsonParser = bodyParser.json();
 app.use(bodyParser.urlencoded({ extended: false }));
+
+app.get("/users/", async(request, response)=>{
+  try {
+    let result= await User.find().exec()
+    response.send(result)
+  }catch(error){
+    console.log(error)
+    response.status(500).send(error)
+  }
+})
+
+app.get("/users/:email", async(request, response)=>{
+  try {
+    let result= await User.find({email:request.params.email}).exec();
+    response.send(result)
+  }catch(error){
+    console.log(error)
+    response.status(500).send(error)
+  }
+})
 
 app.get("/media", async (request, response) => {
   console.log("MEDIA IS BEING REQUESTED");
@@ -114,6 +136,44 @@ app.post("/memebaters", async (request, response) => {
     }
   });
 });
+app.get("/challenge/:media_id", async(request, response)=>{
+  try {
+    let result = await Challenge.find({media_id:ObjectId(request.params.media_id)}).exec()
+    if (result){
+      response.status(200).send(result)
+    }
+  }catch(error){
+    console.log(error)
+    response.status(500).send(error)
+  }
+})
+app.post("/challenge", async(request, response)=>{
+  console.log(request.body)
+  const challenge=new Challenge(request.body.data)
+  challenge.save((error)=>{
+    if (error){
+      console.log(error)
+      response.status(500).send(error)
+    } else{
+      console.log("challenge save to database")
+      response.status(200).send(request.body)
+    }
+    })
+})
+app.post("/challenge/likes/add", async (request, response) => {
+  console.log(request.body.id)
+  Challenge.updateOne(
+    { _id: ObjectId(request.body.id) },
+    { $set: { likes: request.body.count} }
+  ).then((resp) => response.status(200).send(request.body));
+});
+app.post("/challenge/dislikes/add", async (request, response) => {
+  console.log(request.body.id)
+  Challenge.updateOne(
+    { _id: ObjectId(request.body.id) },
+    { $set: { dislikes: request.body.count} }
+  ).then((resp) => response.status(200).send(request.body));
+});
 // Serve static assets in production
 if (process.env.NODE_ENV === "production") {
   // Set static folder
@@ -124,7 +184,7 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 app.listen(PORT, function (error) {
   if (error) console.log("listen error", error);

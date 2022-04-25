@@ -12,7 +12,7 @@ import useWindowPosition from "../../hook/useWindowPosition";
 const useStyles = makeStyles((theme) => ({
   root: {
     height: "100vh",
-    backgroundColor: "#3a84f4",
+    backgroundColor: "rgb(167, 208, 236)",
   },
   container: {
     width: "80%",
@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
     margin: "auto auto",
   },
   title: {
-    color: "#FFF",
+    color: "#000",
     fontWeight: "500",
     fontSize: "2rem",
     width: "100%",
@@ -40,12 +40,13 @@ const useStyles = makeStyles((theme) => ({
     border: "0",
     borderTop: "1px solid #fff",
     margin: "1.5rem auto",
+    color: "#000",
   },
   message: {
-    color: "rgba(255, 255, 255, 0.5)",
+    color: "#000",
   },
   goDown: {
-    color: "#fff",
+    color: "#000",
     fontSize: "2rem",
   },
 }));

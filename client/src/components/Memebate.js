@@ -7,6 +7,8 @@ import { useAuth0 } from "@auth0/auth0-react";
 import "./Memebate.css";
 import MemeBuilder from "./MemeBuilder";
 import Mbreactions from "./Mbreactions";
+import Challenge from "./Challenge";
+
 
 function Memebate() {
   let { id } = useParams();
@@ -16,6 +18,13 @@ function Memebate() {
   const user = useAuth0();
   const [memeBuilderState, setMemeBuilderState] = useState(false);
   const [memebateList, setMemebateList]=useState([])
+  const updateList= async (meme)=>{
+    setLoading(true)
+  let list=memebateList
+  list.push(meme)
+  setMemebateList(list)
+    setLoading(false);
+  }
 
   useEffect(() => {
     let ignore = false;
@@ -90,8 +99,8 @@ function Memebate() {
         <div className="title">
           <h1>{data.title}</h1>
           <div className="tags">
-            <div className="tag-cat">{data.category}</div>
-            <div className="tag-for">{data.format}</div>
+            <div className="tag-catfor">{data.category}</div>
+            <div className="tag-catfor">{data.format}</div>
           </div>
         </div>
         <iframe
@@ -123,23 +132,30 @@ function Memebate() {
         <div className="synopsis">{data.synopsis}
         </div>
       </div>
+      <div className="debate_responses">
+        <div className="memebate_container">
       {!memeBuilderState && (
         <button className="btn" onClick={() => setMemeBuilderState(true)}>
           Memebate This
         </button>
       )}
-      {memeBuilderState && <MemeBuilder mediaId={id} />}
+      {memeBuilderState && <MemeBuilder mediaId={id} updateList={updateList} />}
         <div className="memebatelist">
           {
             memebateList?.map((memebate, index)=>{
               return(
-                <div className="memebatelist_item">
+                <div className="memebatelist_item" key={index}>
                   <Mbreactions data={memebate}/>
                   </div>
               )
             })
             
           }
+          </div>
+        </div>
+        <div className="challenge_container">
+          <Challenge media_id={id}/>
+        </div>
         </div>
     </div>
   );

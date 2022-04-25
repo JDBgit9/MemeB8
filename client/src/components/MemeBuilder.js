@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import "./Memebuilder.css";
+import { useAuth0 } from "@auth0/auth0-react";
+import axios from "axios";
 
-
-function MemeBuilder({mediaId}) {
+function MemeBuilder({mediaId, updateList}) {
   const [meme, setMeme] = useState([]);
   const [defaultMemes, setDefaultMemes] = useState([]);
   const [memeIndex, setMemeIndex] = useState(0);
@@ -14,6 +15,7 @@ function MemeBuilder({mediaId}) {
   const [showForm, setShowForm] = useState(false);
   const [memeTopText, setMemeTopText] = useState("");
   const [memeBottomText, setMemeBottomText] = useState("");
+  const user = useAuth0();
 
   const updateCaption = (e, index) => {
     const text = e.target.value || "";
@@ -54,7 +56,7 @@ function MemeBuilder({mediaId}) {
     e.preventDefault();
     let memeObject = {
       template_id: defaultImage,
-      username: "jdbwebdev",
+      username: "justdev",
       password: "J.JfsG-?YLHx8C@",
       text0: memeTopText,
       text1: memeBottomText,
@@ -65,10 +67,14 @@ function MemeBuilder({mediaId}) {
       method: "POST",
     })
       .then((response) => {
+        setShowForm(false)
+        setMemeTopText("")
+        setMemeBottomText("")
         return response.json();
       })
-      .then((resp) => {
+      .then(async(resp) => {
         console.log(resp);
+        let userInfo=await axios.get(`/users/${user.user.email}`)
         fetch("/memebaters", {
           method: "POST",
           headers: {
@@ -80,9 +86,16 @@ function MemeBuilder({mediaId}) {
             laughs: 0,
             meme: resp.data.url,
             media_id: mediaId,
+            user: {
+              id: userInfo.data[0]._id,
+              userName: userInfo.data[0].username
+            }
           })
         }).then(response=>{
-          console.log(response)
+          return response.json()  
+        }).then (resp=>{
+          console.log(resp)
+            updateList(resp)
         })
       });
   };

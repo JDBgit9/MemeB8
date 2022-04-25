@@ -1,22 +1,20 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+const { ObjectId } = require("mongodb");
 
 const challengeSchema = new Schema({
-likes: {type: Number, required: true},
-dislikes: {type: Number, required: true},
-source1: {type: String, required: true},
-source2: {type: String, required: true},
-source3: {type: String, required: true},
-tags: {type: String, required: true},
-
-
-
-
-
+  challenge: { type: String, required: true },
+  likes: { type: Number, required: false },
+  dislikes: { type: Number, required: false },
+  sources: { type: Array, required: true },
+  tags: { type: Array, required: false },
+  media_id: { type: ObjectId, required: false},
+  user: {
+      id: {type: ObjectId, required: true},
+      userName: {type:String, required: true},
+  },
 });
 
-
-
-    const Challenge = mongoose.model("challenge", challengeSchema);
+const Challenge = mongoose.model("challenge", challengeSchema);
 
 module.exports = Challenge;
