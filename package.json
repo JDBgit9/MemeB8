@@ -4,7 +4,7 @@
   "description": "A social media game application that puts the fun back into the discourse online",
   "main": "server.js",
   "engine": {
-    "node": "16.x",
+    "node": "8.x",
     "yarn": "1.x"
   },
   "scripts": {
