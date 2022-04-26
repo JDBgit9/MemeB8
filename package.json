@@ -38,6 +38,7 @@
     "dropzone": "^6.0.0-beta.2",
     "express": "^4.17.1",
     "express-openid-connect": "^2.2.0",
+    "http-proxy-middleware": "^2.0.6",
     "joi": "^17.4.0",
     "mongoose": "^5.11.11",
     "node-fetch": "^2.6.1",
