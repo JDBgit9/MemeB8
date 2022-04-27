@@ -24,6 +24,11 @@ record.onclick = function() {
   }
   getUserMedia(constraints)
   { audio: true, video; true }
+  {
+    audio: true,
+    video; { width: 1280, height; 720 }
+  }
+  
 
 
 
