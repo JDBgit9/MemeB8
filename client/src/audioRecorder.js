@@ -30,3 +30,5 @@ recorder
   alert('We could not retrieve your message');
   console.log(e);
 });
+
+export default audioRecorder;
