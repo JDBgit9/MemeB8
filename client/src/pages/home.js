@@ -16,8 +16,6 @@ import AboutUs from "../components/aboutUs/AboutUs";
 import Details from "../components/aboutUs/Details";
 import GetStarted from "../components/aboutUs/GetStarted";
 
-
-
 const useStyles = makeStyles((theme) => ({
   container: {
     marginTop: "64px",
@@ -87,6 +85,7 @@ console.log(data)
         <Grid item sm={4} xs={12}>
           <Profile />
           <Post />
+          <AudioRecorder />
         </Grid>
       </Grid>
     );

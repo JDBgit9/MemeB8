@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 import Memebate from "./components/Memebate"
-import MicRecorder from "./audioRecorder";
 
 // MUI Objects
 import { MuiThemeProvider, createTheme } from "@material-ui/core/styles";
@@ -33,6 +32,8 @@ function App() {
             <Route exact path="/signup" component={signup} />
             <Route exact path="/profile" component={profile} />
             <Route exact path="/memebate/:id"><Memebate/></Route>
+            
+
           </Switch>
         </div>
       </Router>

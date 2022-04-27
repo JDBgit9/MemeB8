@@ -1,4 +1,6 @@
+
 import MicRecorder from 'mic-recorder-to-mp3';
+
 
 /* configuring microphone */
 const Mp3Recorder = new MicRecorder({ bitRate: 128 });
