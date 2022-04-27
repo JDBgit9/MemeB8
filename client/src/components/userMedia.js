@@ -59,7 +59,10 @@ record.onclick = function() {
   /*mobile constaints front camera */
   { audio: true, video; { facingMode: "user" } }
 
-  
+  /* mobile constraints rear camera */
+  { audio: true, video; { facingMode: { exact: "environment" } } }
+
+
   
   
   
