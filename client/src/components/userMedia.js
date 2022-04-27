@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { Component } from "react";
+import { useState } from "react";
+import { useAuth0 } from "@auth0/auth0-react";
+import axios from "axios";
 
 
 const obj = {hello: 'world'};
@@ -101,6 +104,11 @@ const videoElement = document.querySelector('video');
 videoElement.videoTracks.addEventListener('addtrack', (event) => {
   console.log(`Video track: ${event.track.label} added`);
 });
+
+/* Using the onaddtrack event handler property:*/
+videoElement.videoTracks.onaddtrack = (event) => {
+  console.log(`Video track: ${event.track.label} added`);
+};
 
 
   
