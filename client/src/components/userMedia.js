@@ -62,6 +62,8 @@ record.onclick = function() {
   /* mobile constraints rear camera */
   { audio: true, video; { facingMode: { exact: "environment" } } }
 
+/* adding a non-number constraint to request specific device*/
+{ video: { deviceId: myPreferredCameraDeviceId } }
 
   
   
