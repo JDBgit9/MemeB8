@@ -78,6 +78,12 @@ const myPromise = new Promise((resolve, reject) => {
     .then(handleResolvedA, handleRejectedA)
     .then(handleResolvedB, handleRejectedB)
     .then(handleResolvedC, handleRejectedC);
+
+    /* MediaStreamTrack*/
+    const enabledFlag = track.enabled
+track.enabled = [true | false]
+
+
   
 
   
