@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "A social media game application that puts the fun back into the discourse online",
   "main": "server.js",
-  "engine": {
-    "node": "18.x",
+  "engines": {
+    "node": "18.0.0",
     "yarn": "1.x"
   },
   "scripts": {
