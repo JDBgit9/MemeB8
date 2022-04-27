@@ -1,3 +1,5 @@
+import React, { Component } from "react";
+
 const MicRecorder = require('mic-recorder-to-mp3');
  
 // New instance

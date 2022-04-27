@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 import Memebate from "./components/Memebate"
+import audioRecorder from "./audioRecorder";
 // MUI Objects
 import { MuiThemeProvider, createTheme } from "@material-ui/core/styles";
 
