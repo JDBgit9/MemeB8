@@ -23,6 +23,8 @@ record.onclick = function() {
     console.log("recorder started");
   }
   getUserMedia(constraints)
+  { audio: true, video; true }
+
 
 
 
