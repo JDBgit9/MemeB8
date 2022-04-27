@@ -22,12 +22,17 @@ record.onclick = function() {
     mediaRecorder.start();
     console.log("recorder started");
   }
+/*adding constraints*/
+
   getUserMedia(constraints)
+
+  /*adding consraints*/
   { audio: true, video; true }
   {
     audio: true,
     video; { width: 1280, height; 720 }
   }
+  /*adding a min-max resolution function*/
   {
     audio: true,
     video; {
@@ -35,6 +40,7 @@ record.onclick = function() {
       height: { min: 720 }
     }
   }
+  /* adding an overconstrained error function */
   {
     audio: true,
     video; {
@@ -42,6 +48,18 @@ record.onclick = function() {
       height: { min: 576, ideal; 720, max; 1080 }
     }
   }
+  /* added an ideal value */
+  {
+    audio: true,
+    video; {
+      width: { ideal: 1280 };
+      height: { ideal: 720 }
+    }
+  }
+  /*mobile constaints front camera */
+  { audio: true, video; { facingMode: "user" } }
+
+  
   
   
   
