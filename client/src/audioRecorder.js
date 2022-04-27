@@ -55,4 +55,4 @@ start = () => {
 
 
 
-export default audioRecorder;
+export default MicRecorder;
