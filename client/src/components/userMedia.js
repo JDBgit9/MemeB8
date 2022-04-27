@@ -90,7 +90,7 @@ pauseButton.onclick = function(evt) {
     pauseButton.innerHTML = newState ? "&#x25B6;&#xFE0F;" : "&#x23F8;&#xFE0F;";
     myAudioTrack.enabled = newState;
   }
-  /* adding an even listener add traclt list*/
+  /* adding an event listener add track list*/
   addEventListener('addtrack', event => { })
 
 onaddtrack = event => { }
