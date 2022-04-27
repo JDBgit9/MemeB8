@@ -65,7 +65,9 @@ record.onclick = function() {
 /* adding a non-number constraint to request specific device*/
 { video: { deviceId: myPreferredCameraDeviceId } }
 
-  
+/*return camera requested or diff camera if no longer available */
+{ video: { deviceId: { exact: myExactCameraOrBustDeviceId } } }
+
   
   
 
