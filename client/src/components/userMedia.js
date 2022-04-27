@@ -28,6 +28,14 @@ record.onclick = function() {
     audio: true,
     video; { width: 1280, height; 720 }
   }
+  {
+    audio: true,
+    video; {
+      width: { min: 1280 };
+      height: { min: 720 }
+    }
+  }
+  
   
 
 
