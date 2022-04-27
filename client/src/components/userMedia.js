@@ -83,6 +83,20 @@ const myPromise = new Promise((resolve, reject) => {
     const enabledFlag = track.enabled
 track.enabled = [true | false]
 
+/*adding a click eventfor pause button */
+pauseButton.onclick = function(evt) {
+    const newState = !myAudioTrack.enabled;
+  
+    pauseButton.innerHTML = newState ? "&#x25B6;&#xFE0F;" : "&#x23F8;&#xFE0F;";
+    myAudioTrack.enabled = newState;
+  }
+  /* adding an even listener add traclt list*/
+  addEventListener('addtrack', event => { })
+
+onaddtrack = event => { }
+
+  
+
 
   
 
