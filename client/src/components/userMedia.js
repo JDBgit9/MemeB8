@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { useState } from "react";
-import { useAuth0 } from "@auth0/auth0-react";
 import axios from "axios";
+import home from "../home.css";
+import user from "./User";
 
 
 const obj = {hello: 'world'};
@@ -110,6 +111,7 @@ videoElement.videoTracks.onaddtrack = (event) => {
   console.log(`Video track: ${event.track.label} added`);
 };
 
+export default userMedia;
 
   
 
