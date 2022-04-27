@@ -68,6 +68,18 @@ record.onclick = function() {
 /*return camera requested or diff camera if no longer available */
 { video: { deviceId: { exact: myExactCameraOrBustDeviceId } } }
 
+const myPromise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve('foo');
+    }, 300);
+  });
+  
+  myPromise
+    .then(handleResolvedA, handleRejectedA)
+    .then(handleResolvedB, handleRejectedB)
+    .then(handleResolvedC, handleRejectedC);
+  
+
   
   
 
