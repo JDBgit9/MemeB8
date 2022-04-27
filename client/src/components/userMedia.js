@@ -95,6 +95,14 @@ pauseButton.onclick = function(evt) {
 
 onaddtrack = event => { }
 
+/* using the event listener */
+const videoElement = document.querySelector('video');
+
+videoElement.videoTracks.addEventListener('addtrack', (event) => {
+  console.log(`Video track: ${event.track.label} added`);
+});
+
+
   
 
 
