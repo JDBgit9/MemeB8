@@ -38,7 +38,7 @@ const Home = () => {
       setLoading(true);
       setIsError(false);
       try {
-        const resp = await axios.get("/media");
+        const resp = await axios.get("/Media");
         if (!ignore) setData(resp.data);
       } catch (error) {
         console.error(error);
