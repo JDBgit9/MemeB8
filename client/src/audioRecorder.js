@@ -1,4 +1,3 @@
-
 import MicRecorder from 'mic-recorder-to-mp3';
 
 
@@ -57,4 +56,4 @@ start = () => {
 
 
 
-export default MicRecorder;
+export default AudioRecorder;
