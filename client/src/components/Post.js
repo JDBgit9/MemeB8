@@ -5,6 +5,9 @@ import { makeStyles } from "@material-ui/core/styles";
 import User from "./User";
 import "./Post.css";
 
+
+
+
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
@@ -189,6 +192,7 @@ const Post = () => {
       />
       <button onClick={handleSubmit}>Submit</button>
     </div>
+     
     </div>
   );
 };

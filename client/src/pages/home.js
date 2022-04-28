@@ -86,6 +86,7 @@ console.log(data)
           <Profile />
           <Post />
         </Grid>
+      
       </Grid>
     );
   } else {
