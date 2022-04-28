@@ -5,6 +5,7 @@
   "main": "server.js",
   "engines": {
     "node": "18.0.0",
+    "npm": "8.x",
     "yarn": "1.x"
   },
   "scripts": {
