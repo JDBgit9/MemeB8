@@ -15,6 +15,7 @@ import Post from "../components/Post";
 import AboutUs from "../components/aboutUs/AboutUs";
 import Details from "../components/aboutUs/Details";
 import GetStarted from "../components/aboutUs/GetStarted";
+import AudioRecorder from "../audioRecorder";
 
 
 const useStyles = makeStyles((theme) => ({
