@@ -16,6 +16,7 @@ import AboutUs from "../components/aboutUs/AboutUs";
 import Details from "../components/aboutUs/Details";
 import GetStarted from "../components/aboutUs/GetStarted";
 
+
 const useStyles = makeStyles((theme) => ({
   container: {
     marginTop: "64px",
