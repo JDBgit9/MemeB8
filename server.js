@@ -175,7 +175,7 @@ app.post("/challenge/dislikes/add", async (request, response) => {
   ).then((resp) => response.status(200).send(request.body));
 });
 // Serve static assets in production
-if (process.env.NODE_ENV === "memeprod") {
+if (process.env.NODE_ENV === "production") {
   // Set static folder
   app.use(express.static("client/build"));
 
