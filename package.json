@@ -31,9 +31,17 @@
     "@material-ui/icons": "^4.11.3",
     "@mui/material": "^5.6.3",
     "async": "^3.2.3",
+<<<<<<< HEAD
     "axios": "^0.27.2",
     "body-parser": "^1.20.0",
     "config": "^3.3.7",
+=======
+
+    "axios": "^0.27.2",
+
+    "body-parser": "^1.19.0",
+    "config": "^3.3.3",
+>>>>>>> 9bfe4beaae69fd1fe159423d917194fcb5fe16a3
     "cors": "^2.8.5",
     "dayjs": "^1.11.1",
     "dropzone": "^6.0.0-beta.2",
