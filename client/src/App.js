@@ -16,7 +16,7 @@ import home from "./pages/home";
 import signup from "./pages/signup";
 import profile from "./pages/profile";
 import Post from "./components/Post";
-import AudioRecorder from "./audioRecorder";
+
 // import aboutUs from './pages/aboutUs'
 
 // Theme of the app is managed here
