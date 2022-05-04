@@ -4,7 +4,7 @@
   "description": "A social media game application that puts the fun back into the discourse online",
   "main": "server.js",
   "engines": {
-    "node": "18.0.0",
+   
     "npm": "8.6.0",
     "yarn": "1.x"
   },
@@ -19,6 +19,7 @@
   "license": "MIT",
   "devDependencies": {
     "concurrently": "^7.1.0",
+    "eslint-plugin-react-hooks": "^4.5.0",
     "nodemon": "^2.0.15",
     "web-vitals": "^2.1.4",
     "webpack-cli": "^4.9.2",
@@ -47,6 +48,7 @@
     "mongoose": "^5.11.6",
     "node-fetch": "^2.6.7",
     "npm": "^8.8.0",
+    "react-dom": "^16.8.0",
     "react-dropzone": "^12.1.0",
     "react-redux": "^8.0.1",
     "react-router-dom": "v5.1",
