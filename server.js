@@ -7,7 +7,7 @@ const Media = require("./models/media");
 const Memebater = require("./models/memebater");
 const { response, request } = require("express");
 const ObjectId = require("mongodb").ObjectId;
-const fetch = require("node-fetch");
+const fetch = require("cross-fetch");
 const User = require("./models/user");
 const Challenge = require("./models/challenge")
 

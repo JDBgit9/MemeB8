@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Memebate from "./components/Memebate"
 
@@ -30,14 +30,14 @@ function App() {
         <Navbar />
      
         <div className="container">
-          <Switch>
+          <Routes>
             <Route exact path="/" component={home} />
             {/* <Route exact path="/AboutUs" component={aboutUs}/> */}
             {/* <Route exact path="/userlogin" component={login} /> */}
             <Route exact path="/signup" component={signup} />
             <Route exact path="/profile" component={profile} />
             <Route exact path="/memebate/:id"><Memebate/></Route>
-          </Switch>
+          </Routes>
         </div>
       </Router>
     </MuiThemeProvider>     

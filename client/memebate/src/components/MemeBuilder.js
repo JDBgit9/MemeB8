@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
+import { MemoryRouter } from "react-router-dom";
 import "./Memebuilder.css";
 import { useAuth0 } from "@auth0/auth0-react";
 import axios from "axios";
@@ -11,7 +11,7 @@ function MemeBuilder({mediaId, updateList}) {
   const [captions, setCaptions] = useState([]);
   const api = "384be08c76d654f4105db56ec7dd11";
   const [defaultImage, setDefaultImage] = useState("");
-  const history = useHistory();
+  const history = MemoryRouter();
   const [showForm, setShowForm] = useState(false);
   const [memeTopText, setMemeTopText] = useState("");
   const [memeBottomText, setMemeBottomText] = useState("");
